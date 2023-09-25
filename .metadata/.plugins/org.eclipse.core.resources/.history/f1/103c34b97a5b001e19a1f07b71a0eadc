@@ -1,0 +1,11 @@
+package main;
+
+public class PrimerPrograma {
+
+	public static void main(String[] args) {
+		// Write()
+		System.out.println("Hola mundo");
+				
+	}
+
+}
