@@ -18,8 +18,7 @@ public class DatosPersona {
 		int edad;
 		float altura;
 		String nombre;
-		char estado;
-		
+		String estado1,estado2;
 		
 		System.out.print("Introduce tu edad: ");
 		edad = entrada.nextInt();
@@ -29,14 +28,17 @@ public class DatosPersona {
 		
 				
 		System.out.print("Introduce tu nombre: ");
-		nombre = entrada.CharAt();
+		nombre = entrada.next();
 		
-		System.out.print("Introduce estado: ");
-		estado = entrada.next();
-		
-		System.out.println("Se ha leido el caracter: " + c1);
-		System.out.println("Se ha leido el caracter: " + c2);
-		System.out.println("c1 > c2? -> "+ (c1 > c2));
+		System.out.print("¿Usted es casado?: SI NO");
+		estado1 = entrada.next();
+		System.out.print("¿Usted es soltero?: SI NO");
+		estado2 = entrada.next();
+
+		System.out.println("Su edad es : " + edad);
+		System.out.println("Su altura es : " + altura);
+		System.out.println("Su nombre es: "+ nombre);
+		System.out.println("Su estado es: "+ (estado1=estado2));
 	}
 
 }
