@@ -17,7 +17,7 @@ public class DatosPersona {
 		Scanner entrada = new Scanner(System.in);
 		int edad;
 		float altura;
-		char nombre;
+		String nombre;
 		char estado;
 		
 		
