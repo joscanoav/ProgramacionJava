@@ -1,13 +1,4 @@
 package tiposdedatos;
-//Primero el programa pide el nombre de la persona.
-//Luego, pide la edad.
-//Despues, pide la altura.
-//Por ultimo, pide el estado civil (Soltero/Casado).
-//Nombre: ?
-// Edad: ?
-//Altura: ?
-//Estado: ?
-
 import java.util.Scanner;
 
 public class DatosPersona {
@@ -18,27 +9,25 @@ public class DatosPersona {
 		int edad;
 		float altura;
 		String nombre;
-		String estado1,estado2;
-		
+		boolean casado;
 		System.out.print("Introduce tu edad: ");
 		edad = entrada.nextInt();
-		
 		System.out.print("Introduce tu altura: ");
-		altura = entrada.nextFloat();
-		
-				
+		altura = entrada.nextFloat();		
 		System.out.print("Introduce tu nombre: ");
 		nombre = entrada.next();
-		
-		System.out.print("¿Usted es casado?: SI NO");
-		estado1 = entrada.next();
-		System.out.print("¿Usted es soltero?: SI NO");
-		estado2 = entrada.next();
-
+		System.out.print("ï¿½Esta casado?: (true/false) ");
+		casado = entrada.nextBoolean();
+		System.out.println("Su nombre es: "+ nombre);
 		System.out.println("Su edad es : " + edad);
 		System.out.println("Su altura es : " + altura);
-		System.out.println("Su nombre es: "+ nombre);
-		System.out.println("Su estado es: "+ (estado1=estado2));
+		
+		if (casado) {
+			System.out.println("Esta casado");
+		} else {System.out.println("Esta soltero");
+		
+		}
 	}
-
 }
+
+
