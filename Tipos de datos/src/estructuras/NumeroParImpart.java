@@ -7,6 +7,7 @@ public class NumeroParImpart {
 	public static void main(String[] args) {
 		int num;
 		System.out.print("Introduce numero: ");
+		System.out.print("Introduce numero: ");
 		Scanner entrada = new Scanner(System.in);
 		num = entrada.nextInt();
 
@@ -22,3 +23,9 @@ public class NumeroParImpart {
 	}
 
 }
+
+
+
+
+
+

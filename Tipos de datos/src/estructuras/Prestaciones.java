@@ -14,23 +14,26 @@ public class Prestaciones {
 		edad = entrada.nextInt();
 		System.out.print("Escriba sus ingresos anuales: ");
 		ingresos = entrada.nextDouble();
+		
 		if (edad >= 18){
 			
 			if (ingresos > 25000){
 				
 				System.out.println("No recibe prestación");
-			else {
-				System.out.println("Recibe una prestación de " + (ingresos*0.25));
-			}
-		else {
+			} else {
+				System.out.println("Recibe una prestación de " + (ingresos * 0.25));
 			
-				System.out.println("Recibe una prestación de " + (ingresos*0.40));
+			}
+			} else {
+			
+				System.out.println("Recibe una prestación de " + (ingresos * 0.40));
 			}
 				
-			}	
+			}
 			
 		}	
+		
+			
 
-	}
 
-}
+
