@@ -61,7 +61,7 @@ public class Ejercicio4 {
 			break;
 		}
 		
-System.out.println("La Fecha de su cumpleaños es " + day + year);
+System.out.println("La Fecha de su cumpleaños es " + (day) + (mes) + (year);
 
 	}
 
