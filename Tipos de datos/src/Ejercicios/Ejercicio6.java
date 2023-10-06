@@ -33,15 +33,6 @@ public class Ejercicio6 {
 		}
 			
 		}
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-	}
+	
+}
 
