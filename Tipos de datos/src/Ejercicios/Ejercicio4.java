@@ -59,9 +59,12 @@ public class Ejercicio4 {
 		case 12:
 			mes = "Diciembre";
 			break;
+		
+		default:
+			mes= "Mes no valido";
 		}
 		
-System.out.println("La Fecha de su cumpleaños es " + (day) + (mes) + (year);
+		System.out.println("La Fecha de su cumpleaños es " + day + " de " + mes + " de " + year);
 
 	}
 

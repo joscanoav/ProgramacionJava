@@ -16,7 +16,7 @@ public class DatosPersona {
 		altura = entrada.nextFloat();		
 		System.out.print("Introduce tu nombre: ");
 		nombre = entrada.next();
-		System.out.print("�Esta casado?: (true/false) ");
+		System.out.print("Esta casado?: (true/false) ");
 		casado = entrada.nextBoolean();
 		System.out.println("Su nombre es: "+ nombre);
 		System.out.println("Su edad es : " + edad);
