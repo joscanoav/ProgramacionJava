@@ -11,27 +11,35 @@ public class Ejercicio6 {
 		int  num1;
 		int  num2;
 		int	 i = 0;
+		int j=0;
 		
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("Introduce un primer numero a multiplicar: ");
 		num1 = teclado.nextInt();
 		System.out.println("Introduce un segundo numero a multiplicar: ");
 		num2 = teclado.nextInt();
-		
-		while (i < num2) {
+
+		while (i < num1 ) {
 			
-			System.out.print(num1);
-			
-			if(i < num2 -1) {
-				
+			System.out.print(num2);
+			if (i < num1 - 1 ) {
 				System.out.print(" + ");
-			
 			}
-			
 			i++;
-			
+		} 
+		System.out.println();
+
+		
+		while (j < num2 ) {
+
+			System.out.print(num1);	
+			if (j < num2 - 1 ) {
+				System.out.print(" + ");
+			}
+			j++;
 		}
-			
+		System.out.println();
+				
 		}
 	
 }
