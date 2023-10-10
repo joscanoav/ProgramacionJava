@@ -1,17 +1,20 @@
 package Cadenas;
-
+import java.util.Scanner;
 public class CadenaArbol {
 
 	public static void main(String[] args) {
-		String palabra;
+		Scanner in = new Scanner(System.in);
+		String texto;
+		String palabraPiramide = "";
+		System.out.println("Introduce una cadena: ");
+		texto = in.nextLine();
 		
-		System.out.print("Introduce una palabra: ");
-		palabra = input.nextLine();
+		for(int i = 0; i < texto.length();i++) {
+			palabraPiramide += texto.charAt(i);
+			System.out.println(palabraPiramide);
 		
-		for (int i = 0; i < palabra.length();i++) {
-			System.out.print(palabra.charAt(i)+" "); 
-		}
-
 	}
+
+}
 
 }
