@@ -7,27 +7,27 @@ public class Ejercicio2 {
 		 *  cuántas vocales tiene. Las vocales pueden ser mayúsculas 
 		 *  o minúsculas. Por ejemplo: si el string es "CadEnA", mostrará
 		 *  "CadEnA tiene 3 vocales".*/
-		String texto="";
 		int cvocales=0;
-		char [] c= texto.toCharArray();
-		
-		
+				
 		Scanner in = new Scanner(System.in);
 		System.out.println("Escribe un texto: ");
-		texto = in.nextLine();
+		String texto = in.nextLine();
 		
 		for (int i = 0; i < texto.length();i++) {
-			switch (c[i]) {
-		case 'a':
-			cvocales++;
-			i++;
-			
+
+			char caracter = texto.charAt(i);
+			if(caracter == 'a' || caracter == 'e'|| caracter == 'i'|| caracter == 'o'|| caracter == 'u' ||
+			caracter == 'A' || caracter == 'E'|| caracter == 'I'|| caracter == 'O'|| caracter == 'U'	) {
+				cvocales++;
 			}
 			
+			}
+		System.out.println("El texto tiene las siguiente vocales: " + cvocales);
+
 		}
 		
 		
 		
 	}
 
-}
+
