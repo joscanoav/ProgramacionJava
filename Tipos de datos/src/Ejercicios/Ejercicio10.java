@@ -1,5 +1,5 @@
 package Ejercicios;
-
+import java.util.Scanner;
 public class Ejercicio10 {
 
 	public static void main(String[] args) {
@@ -51,20 +51,56 @@ Saldo disponible: 50
  2 - Retirar
  3 - Salir
 >> 3 */
-
-		double cuenta = 0;
-		System.out.println("Saldo disponible: " + cuenta);
+		Scanner teclado = new Scanner(System.in);
+		double saldo = 0;
+		double cantidad = 0;
+		int option = 0;
+		String log = "";
+		System.out.println("Saldo disponible: " + saldo);
 		
+		do {
 		System.out.print(
-				"Saldo disponible: 0  ¿Que desea hacer? \n"			
+				"¿Que desea hacer? \n"			
 				+ "1 - Ingresar \n"
 				+ "2 - Retirar \n"
-				+ "3 - Salir \n"
+				+ "3 - Historial \n"
+				+ "4 - Salir \n"
 				+ ">>"	
 								
 		);
-		
-		
-	}
+		option = teclado.nextInt();
+		switch (option) {
+		case 1:
+			System.out.println("Cuanto desea Ingresar: ");
+			cantidad = teclado.nextDouble();
+			saldo += cantidad;
+			System.out.println("La operacion fue exitosa");
+			log += "+" + cantidad + "\n";
+			break;
+			
+		case 2:
+			System.out.println("Cuanto desea Retirar: ");
+			cantidad = teclado.nextDouble();
+			saldo -= cantidad;
+			System.out.println("La operacion fue exitosa");
+			log += "-" + cantidad + "\n";
+			break;
 
+		case 3:
+			System.out.println("El estado de cuenta es el siguiente:  " + saldo);
+			String[] transacciones = log.split("\n");
+			for	(String estadoCuenta:transacciones) {
+				System.out.println(estadoCuenta);
+				
+				}
+			break;
+		   } 
+		
+				
+		
+      
+	 } while (option != 4);
+		System.out.println("Gracias por usar nuestra app");
+		
+  }
 }

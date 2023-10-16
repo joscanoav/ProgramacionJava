@@ -34,7 +34,7 @@ public class GestionCuentaBancaria {
 			System.out.println("5. Ver la cantidad de ingresos realizados: ");
 			System.out.println("6. Ver la cantidad de gastos realizados: ");
 			System.out.println("7. Salir: ");
-			
+			System.out.print(">> ");			
 			option = teclado.nextInt();
 			
 			switch (option) {
@@ -79,16 +79,16 @@ public class GestionCuentaBancaria {
 				monedaoption = teclado.nextInt();
 				switch (monedaoption) {
 					case 1:
-						cambio = saldo * 1.15;
-						System.out.println("Saldo en Dolares americanos es de: " + cambio);
+						cambio = saldo / 0.95;
+						System.out.println("Saldo en Dolares americanos es de: " + "$ " + cambio);
 						break;
 					case 2:
-						cambio = saldo * 0.95;
-						System.out.println("Saldo en Libras esterlinas es de :" + cambio);
+						cambio = saldo / 1.15;
+						System.out.println("Saldo en Libras esterlinas es de :" + "£ "+ cambio);
 						break;
 					case 3:
-						cambio = saldo * 0.13;
-						System.out.println("Saldo en Yuanes chinos es de :" + cambio);
+						cambio = saldo / 0.13;
+						System.out.println("Saldo en Yuanes chinos es de :" + "¥ " + cambio);
 						break;
 					default:
 						System.out.println("Opcion no Valida.");
