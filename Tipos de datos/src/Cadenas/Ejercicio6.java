@@ -3,7 +3,12 @@ package Cadenas;
 public class Ejercicio6 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		/*Hacer un programa que pida una
+		 * cadena y la muestre en espejo. 
+		 * Por ejemplo: si el usuario 
+		 * introduce "manos", deberá 
+		 * mostrar "manossonam".*/
+
 
 	}
 
