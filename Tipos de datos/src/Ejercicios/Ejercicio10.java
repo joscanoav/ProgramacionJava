@@ -91,8 +91,7 @@ Saldo disponible: 50
 			String[] transacciones = log.split("\n");
 			for	(String estadoCuenta:transacciones) {
 				System.out.println(estadoCuenta);
-				
-				}
+			}
 			break;
 		   } 
 		
