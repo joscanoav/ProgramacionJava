@@ -1,5 +1,6 @@
 package Cadenas;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio9 {
@@ -14,35 +15,52 @@ public class Ejercicio9 {
 		Scanner entrada = new Scanner(System.in);
 		String cadenaOriginal;
 		String cadenaBusqueda;
-		int indice;
+		int[] indices;
 		
 		System.out.print("Introduce una cadena Original: ");
 		cadenaOriginal = entrada.nextLine();
 		System.out.println("Introduce una cadena de Busqueda: ");
 		cadenaBusqueda = entrada.nextLine();
-		indice = buscarCadena(cadenaOriginal,cadenaBusqueda);
 		
-		if (indice != -1) {
-			System.out.print("Encontrada en indice: " + indice);
+		//Inicia la funcion buscarCadena
+		indices = buscarCadena(cadenaOriginal,cadenaBusqueda);
+		
+		if (indices.length > 0) {
+			System.out.print("Encontrada en indices: ");
+			for(int i= 0;i < indices.length;i++) {
+				System.out.print(indices[i]);
+				if (i < indices.length - 1) {
+					System.out.print(" y ");
+				}
+			}
 		}else {
-			System.out.println("La cadeba no se encuentra");
+			System.out.println("La cadena no se encuentra");
 		}
 	}	
-		public static int buscarCadena(String cadenaOriginal, String cadenaBusqueda) {
+		public static int[] buscarCadena(String cadenaOriginal, String cadenaBusqueda) {
 			int longitudOriginal = cadenaOriginal.length();
 			int	LongitudBusqueda = cadenaBusqueda.length();
+			int[] indicesEncontrados = new int [longitudOriginal];
+			
+			int count =0;
+			
+			
 			for(int i = 0; i <= longitudOriginal - LongitudBusqueda;i++) {
 				if(cadenaOriginal.substring(i,i + LongitudBusqueda).equals(cadenaBusqueda)) {
-					return i;
+					if (count < indicesEncontrados.length) {
+					indicesEncontrados[count] = i;
+					count++;
+					
+					}
+			
 				}
 			}
 			
-			return -1;
 		
-		
-		
-		
-		
+			int[] ocurrencias = Arrays.copyOfRange(indicesEncontrados, 0, count);
+			return ocurrencias;
 	}
 
 }
+
+
