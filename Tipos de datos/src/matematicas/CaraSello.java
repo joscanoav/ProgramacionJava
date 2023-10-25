@@ -10,7 +10,7 @@ public class CaraSello {
 	
 				Random randGem = new Random();
 				int resultado = randGem.nextInt(2);
-				
+				System.out.println("Se lanza la moneda ....");
 				if (resultado == 0){
 					System.out.println("Cara");
 				}else {
