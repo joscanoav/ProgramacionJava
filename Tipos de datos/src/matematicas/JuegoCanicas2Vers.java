@@ -14,8 +14,8 @@ public class JuegoCanicas2Vers {
 		int canicasMaquina =10;
 	
 	while (canicasUsuario > 0 && canicasMaquina >0) {
-		System.out.println("Tienes" +canicasUsuario + " canicas" );
-		System.out.println("La maquina Tiene" +canicasMaquina + " canicas" );
+		System.out.println("Tienes " +canicasUsuario + " canicas" );
+		System.out.println("La maquina Tiene " +canicasMaquina + " canicas" );
 	
 		System.out.println("Elige PAR (P) o IMPAR (I): ");
 		String eleccionUsuario = entrada.next();
