@@ -8,7 +8,7 @@ public class Dado {
 		// TODO Auto-generated method stub
 		Random random = new Random();
 		System.out.println("Lanzando el dado...");
-		int resultado = random.nextInt(6)+ 1;
+		int resultado = random.nextInt(1,7);
 		System.out.println("El resultado del lanzamiento del dado es: " + resultado);
 	}
 
