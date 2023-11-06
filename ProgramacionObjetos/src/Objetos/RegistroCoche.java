@@ -33,7 +33,7 @@ public class RegistroCoche {
         marca=teclado.next();
         System.out.print("Ingrese deposito:");
         deposito=teclado.nextInt();
-        System.out.print("Emite Sonido: Si/ No ");
+        System.out.print("Emite Sonido: Si/ No :  ");
         pitar = teclado.next();
     }
     
