@@ -1,43 +1,70 @@
 package Objetos;
-/*
- * Un contador de galletas crudas;
- * Un contador de galletas horneadas;
- * Una capacidad de horno (numero de galletas que caben);
- * Contador de galletas envasadas;
- * Un deposito de dinero;
- * Un coste en euros por galleta envasada
- * 
- * Incrementar la cantidad de galletas crudas
- * Hornear una cantudad de su contador de galletas crudas (cuidado con la capacidad);
- * Envasar una cantidad de su contador de galletas hornedas;
- * Vender una cantidad de sus galletas envasadas con el coste configurado;
- * 
- * TODAS LAS ACCIONES TIENEN RESTRICCION POR CANTIDADES;
- * */
-import java.util.Scanner;
+
 public class RobotGalletas {
-	public Scanner teclado;
-	int ContarGalletasCrudas = 0;
-	int ContarGalletasHorneadas;
-	int CapacidadHorno;
-	int EnvaseGalletas;
-	double PagoGalletas;
-	double CostoGalleta;
+	public int contadorGalletasCrudas;
+	public int contadorGalletasHorneadas;
+	public int capacidadHorno;
+	public int contadorGalletasEnvasadas;
+	public double depositoDinero;
+	public double costeGalletaEnvasada;
 
 
-public void prepararGalletas () {
-	do {
-	System.out.println("Desea prepara galletas: Si/No");
-	String respuesta = teclado.next();
-	System.out.println("Cuantas galletas va a preparar");
-	ContarGalletasCrudas = teclado.nextInt();
-	} while (respuesta !="Si");
+	public RobotGalletas(int capacidadHorno, double costeGalletaEnvasada) {
 		
+		this.capacidadHorno = capacidadHorno;
+		this.costeGalletaEnvasada = costeGalletaEnvasada;
+	}
+	
+	public void incrementarGalletasCrudas(int cantidad) {
+		if(cantidad > 0) {
+			contadorGalletasCrudas += cantidad;
+			System.out.println("Se incrementaron" + cantidad + "galletas crudas.");
+		}else {
+			System.out.println("La cantidad debe ser mayor que cero.");
+		}
+	}
+	
+	// Separa por cada criterio de if
+	
+	public void hornearGalletas(int cantidad) {
+		if(cantidad > 0 && cantidad <= contadorGalletasCrudas && cantidad <=capacidadHorno) {
+			
+			contadorGalletasCrudas -= cantidad;
+			contadorGalletasHorneadas += cantidad;
+			System.out.println("Se hornearon" + cantidad + "galletas.");
+		}else {
+			System.out.println("Cantidad invalidad o insuficiente espacio en el horno");
+		}
+	}
 
+	public void envasarGalletas(int cantidad) {
+		if (cantidad > 0 && cantidad <= contadorGalletasHorneadas) {
+			contadorGalletasHorneadas -= cantidad;
+			contadorGalletasEnvasadas += cantidad;
+			System.out.println("Se enviaron" + cantidad + "galletas");
+		}else {
+			System.out.println("Cantidad invalidad o insuficientes galletas horneadas");
+		}
+	}
 
-
-
+	public void venderGalletas (int cantidad) {
+		if(cantidad >0 && cantidad <=contadorGalletasEnvasadas ) {
+			double ingreso = cantidad * costeGalletaEnvasada;
+			depositoDinero += ingreso;
+			contadorGalletasEnvasadas -= cantidad;
+			System.out.println("Se vendieron" + cantidad + "galletas por $" + ingreso + ".");
+			
+		}else {
+			System.out.println("Cantidad invalidad o insuficientes galletas envasadas.");
+		}
+	}
+	
+	public void mostrarEstado() {
+		System.out.println("Galletas Crudas: " + contadorGalletasCrudas);
+		System.out.println("Galletas Horneadas: " + contadorGalletasHorneadas);
+		System.out.println("Galletas Envasadas" + contadorGalletasEnvasadas);
+		System.out.println("Depósito de Dinero: €" + depositoDinero);
+	}
 }
 
 
-}

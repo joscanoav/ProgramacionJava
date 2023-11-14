@@ -14,6 +14,12 @@ public class Main2 {
 		System.out.println(prod1.obtenerPrecioRebajado(20));
 		prod1.reponer(100);
 		System.out.println(prod1.stock);
+		
+		if(prod1.hayStock()) {
+			System.out.println("Hay stock del producto 1");
+		} else {
+			System.out.println("No hay stock del producto 1");
+		}
 	}
 
 }
