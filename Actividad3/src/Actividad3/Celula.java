@@ -18,7 +18,7 @@ public class Celula {
 		this.hebraADN2 = hebraADN2;
 	}
 	
-	//metodo para verificar daños en las hebras de ADN
+	//MÉTODO ESTADO DE LA CELULA
 	
 	public void verificarADN() {
 		for(int i = 0; i < hebraADN1.length();i++) {
@@ -32,17 +32,15 @@ public class Celula {
 					break;
 			}
 		
-	
 		}
 	}
 
-	//metodo para recibir moleculas de ATP
-	
+	// MÉTODO RECIBIR MOLECULAS DE ATP	
 	public void recibirATP(int cantidad) {
 		reservaATP += cantidad;
 	}
 	
-	//metodo para crecer
+	// MÉTODO CRECER MOLÉCULA
 	
 	public void crecer(int moleculasATP) {
 		if(reservaATP >= moleculasATP) {
@@ -53,16 +51,16 @@ public class Celula {
 		}
 	}
 
-	//metodo para dividirse
+	// MÉTODO DIVISIÓN MOLECULAR
 	
 	public Celula dividirse() {
 		if(reservaATP >=10) {
-			reservaATP -= 10;
+			reservaATP = (reservaATP-10)/2;
 			tamaño /=2;
-			Celula celulaHija = new Celula(reino, tamaño, reservaATP/2, estado, hebraADN1, hebraADN2);
+			Celula celulaHija = new Celula(reino, tamaño, reservaATP, estado, hebraADN1, hebraADN2);
 			return celulaHija;
 		} else {
-			System.out.println("No hya suficientes moleculas de ATP para dividirse");
+			System.out.println("No hay suficientes moleculas de ATP para dividirse");
 			return null;
 		}
 	}
