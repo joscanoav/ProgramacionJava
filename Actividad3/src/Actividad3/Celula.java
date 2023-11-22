@@ -31,7 +31,6 @@ public class Celula {
 					estado = "dañada";
 					break;
 			}
-		
 		}
 	}
 
