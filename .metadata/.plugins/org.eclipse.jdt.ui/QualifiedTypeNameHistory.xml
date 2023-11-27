@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="Objetos.Persona"/>
     <fullyQualifiedTypeName name="Principal.MainRobotGalletas"/>
     <fullyQualifiedTypeName name="Objetos.Punto"/>
@@ -11,5 +10,6 @@
     <fullyQualifiedTypeName name="Objetos.Hospital"/>
     <fullyQualifiedTypeName name="Objetos.Fecha"/>
     <fullyQualifiedTypeName name="Actividad3.Celula"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
