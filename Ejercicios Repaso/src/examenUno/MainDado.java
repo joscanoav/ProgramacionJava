@@ -34,7 +34,7 @@ public class MainDado {
 				dado.apostar(numeroApostado, puntosApostados);
 				break;
 			case 3:
-				System.out.println("Fin del juego. Puntos acumulados " + dado.getPuntos() );
+				System.out.println("Fin del juego. Puntos acumulados " + dado.ObtenerPuntos() );
 				System.exit(0);
 			default:
 				System.out.println("Opcion no valida. Intentalo de nuevo.");

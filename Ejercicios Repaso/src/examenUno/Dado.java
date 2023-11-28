@@ -1,16 +1,18 @@
 package examenUno;
 
 import java.util.Random;
-
+//se declara las variables del objeto dado
 public class Dado {
 	private int caras;
 	private int puntos;
+
+//
 	
 	public Dado(int caras) {
 		this.caras = caras;
 		this.puntos = 0;
 	}
-	
+	// metodo lanzar dado utiliza el random
 	public int LanzarDado() {
 		Random random = new Random();
 		int resultado = random.nextInt(caras) + 1;
@@ -35,7 +37,7 @@ public class Dado {
 		System.out.println("Puntos acumulados: " + puntos);
 	}
 	
-	public int getPuntos() {
+	public int ObtenerPuntos() {
 		return puntos;
 	}
 	
