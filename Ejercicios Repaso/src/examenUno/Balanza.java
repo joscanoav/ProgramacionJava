@@ -5,7 +5,7 @@ public class Balanza {
 	private int pesoDerecho;
 	
 	
-	public Balanza(int pesoIzquierdo, int peroDerecho) {
+	public Balanza(int pesoIzquierdo, int pesoDerecho) {
 		this.pesoIzquierdo = pesoIzquierdo;
 		this.pesoDerecho = pesoDerecho;
 	}

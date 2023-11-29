@@ -6,13 +6,13 @@ public class Dado {
 	private int caras;
 	private int puntos;
 
-//
+// Se declaran los constructores
 	
 	public Dado(int caras) {
 		this.caras = caras;
 		this.puntos = 0;
 	}
-	// metodo lanzar dado utiliza el random
+	// metodo lanzar dado utiliza el random para generar resultados al azar
 	public int LanzarDado() {
 		Random random = new Random();
 		int resultado = random.nextInt(caras) + 1;
@@ -20,11 +20,13 @@ public class Dado {
 		return resultado;
 	}
 	
+	//El metodo apostar genera una variable para 
+	
 	public void apostar(int numeroApostado, int puntosApostados) {
 		int resultadoDado = LanzarDado();
-		
+	//comparar el numero apostado por el resultado del lanzamiento
 		if (numeroApostado == resultadoDado) {
-			System.out.println("¡Apsotaste correctamente! Ganas " + puntosApostados + " puntos.");
+			System.out.println("¡Apostaste correctamente! Ganas " + puntosApostados + " puntos.");
 			puntos += puntosApostados;
 			
 		}else {
@@ -36,6 +38,7 @@ public class Dado {
 		
 		System.out.println("Puntos acumulados: " + puntos);
 	}
+	
 	
 	public int ObtenerPuntos() {
 		return puntos;

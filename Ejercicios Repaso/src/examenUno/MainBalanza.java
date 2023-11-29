@@ -17,7 +17,7 @@ public class MainBalanza {
 		Balanza balanza = new Balanza(pesoIzquierdo, pesoDerecho);
 		while (true) {
 			System.out.println("Opciones:");
-			System.out.println("1. Calcular inclinacion");
+			System.out.println("1.Calcular inclinacion");
 			System.out.println("2.Equilibrar");
 			System.out.println("3.Salir");
 			
