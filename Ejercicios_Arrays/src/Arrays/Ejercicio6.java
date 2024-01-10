@@ -1,5 +1,11 @@
 package Arrays;
 import java.util.Arrays;
+/*Hacer un programa que tenga dos arrays (escritos en código) de la 
+ * misma longitud y los sume en un tercer array. Las sumas entre arrays 
+ * se llevan a cabo posición a posición. De esta manera, el array {A, B, C ... } 
+ * sumado con el array {a, b, c ... } daría como resultado el array {A+a, B+b, C+c ... }.
+*/
+
 public class Ejercicio6 {
 
 	public static void main(String[] args) {
