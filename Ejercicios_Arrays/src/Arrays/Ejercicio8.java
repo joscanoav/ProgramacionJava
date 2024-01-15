@@ -1,5 +1,9 @@
 package Arrays;
 import java.util.Arrays;
+/*Hacer un programa que tenga un array de cadenas y las cambie todas a mayúsculas.
+ *Por ejemplo: si el array original es {"Pantera", "Cilantro", "Acueducto"}, el mismo 
+ *array pasará a ser {"PANTERA", "CILANTRO", "ACUEDUCTO"}.
+*/
 public class Ejercicio8 {
 
 	public static void main(String[] args) {
