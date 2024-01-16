@@ -1,5 +1,9 @@
 package Arrays;
-
+/*Hacer un programa que pida al usuario una cadena y separe palabras por espacios mediante el método "split()". También le pide una letra objetivo y después crea un array de enteros que tenga en cada posición el número de veces que aparece dicha letra en una palabra concreta de las obtenidas con "split()".
+Ejemplo:
+USUARIO: "Esta es una cadena"
+USUARIO: Buscar "a"
+PROGRAMA: [1, 0, 1, 2]*/
 import java.util.Scanner;
 
 public class Ejercicio10 {
@@ -20,12 +24,30 @@ public class Ejercicio10 {
 		
 		int[] contadorLetras = new int[palabras.length];
 		//Contar el numero de veces que aparece la letra objetivo
-		for(int j = 0; j < palabras.length; j++) {}
 		
-		
-		
-		
-		
+		for(int i = 0; i < palabras.length; i++) {
+			String palabra = palabras[i];
+			int conteo = 0;
+			for (int j = 0; j< palabra.length(); j++) {
+				if(palabra.charAt(j) == letraObjetivo) {
+					conteo++;
+				}
+			}
+			contadorLetras[i] = conteo;
+		}
+		// Mostrar el resultado
+			System.out.print("PROGRAMA: [");
+			for(int i = 0; i < contadorLetras.length; i++) {
+				System.out.print(contadorLetras[i]);
+				
+				if (i < contadorLetras.length - 1) {
+					System.out.print(", ");
+				}
+					
+				}
+			System.out.println("]");
+			}
+			
 	}
 
-}
+
