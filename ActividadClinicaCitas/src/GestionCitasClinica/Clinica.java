@@ -1,4 +1,4 @@
-package GestionCitas;
+package GestionCitasClinica;
 
 import java.util.Scanner;
 
