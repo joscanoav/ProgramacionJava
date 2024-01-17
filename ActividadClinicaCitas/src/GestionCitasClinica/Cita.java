@@ -2,14 +2,14 @@ package GestionCitasClinica;
 
 public class Cita {
     private String dni;
-    private int franja;
+    private int consultaNumero;
     private int tipo;
     private int hora;
     private int minutos;
 
-    public Cita(String dni, int franja, int tipo, int hora, int minutos) {
+    public Cita(String dni, int consultaNumero, int tipo, int hora, int minutos) {
         this.dni = dni;
-        this.franja = franja;
+        this.consultaNumero = consultaNumero;
         this.tipo = tipo;
         this.hora = hora;
         this.minutos = minutos;
@@ -19,8 +19,8 @@ public class Cita {
         return dni;
     }
 
-    public int getFranja() {
-        return franja;
+    public int getConsultaNumero() {
+        return consultaNumero;
     }
 
     public int getTipo() {
@@ -38,9 +38,8 @@ public class Cita {
     @Override
     public String toString() {
         return "DNI: " + dni +
-                "\nFranja horaria: " + (franja == 0 ? "Mañana" : "Tarde") +
+                "\nConsulta Número: " + consultaNumero +
                 "\nTipo de cita: " + (tipo == 0 ? "Revisión" : "Tratamiento") +
-                "\nHora: " + String.format("%02d:%02d", hora, minutos);
+                "\nHora: " + String.format("%02d:%02d - %02d:%02d", hora, minutos, hora, minutos + 30);
     }
 }
-

@@ -1,5 +1,4 @@
 package GestionCitasClinica;
-
 import java.util.Scanner;
 
 public class Clinica {
@@ -8,9 +7,17 @@ public class Clinica {
     private static final int NUM_HUECOS_POR_FRANJA = 10;
 
     private Cita[][][] citas;  // [consulta][tipo][hueco]
+    private Consulta[] consultas;
 
     public Clinica() {
         citas = new Cita[NUM_CONSULTAS][2][NUM_HUECOS_POR_FRANJA];
+        consultas = new Consulta[NUM_CONSULTAS];
+
+        // Inicialización de consultas con médicos
+        for (int i = 0; i < NUM_CONSULTAS; i++) {
+            Medico medico = new Medico("Médico " + (i + 1));
+            consultas[i] = new Consulta(i + 1, medico);
+        }
     }
 
     public void solicitarCita(String dni, int tipo, int franja, int hueco) {
@@ -19,9 +26,10 @@ public class Clinica {
             int minutos = hueco % 2 == 0 ? 0 : 30;
 
             if (contarCitasPorTipo(tipo) < NUM_CITAS_POR_CONSULTA) {
-                citas[franja][tipo][hueco] = new Cita(dni, franja, tipo, hora + hueco / 2, minutos);
-                System.out.println("Cita reservada con éxito: " +
-                        String.format("%02d:%02d - %02d:%02d", hora, minutos, hora, minutos + 30));
+                citas[franja][tipo][hueco] = new Cita(dni, consultas[franja].getNumero(), tipo, hora + hueco / 2, minutos);
+                System.out.println("Cita reservada con éxito:");
+                System.out.println(citas[franja][tipo][hueco]);
+                System.out.println("Medico Asociado: " + consultas[franja].getMedico().getNombre());
             } else {
                 System.out.println("Ha alcanzado el límite de citas para este tipo. No se puede reservar más.");
             }
@@ -57,8 +65,9 @@ public class Clinica {
                 citas[nuevaFranja][tipoActual][nuevoHueco] = citas[franjaActual][tipoActual][huecoActual];
                 citas[franjaActual][tipoActual][huecoActual] = null;
 
-                System.out.println("Cita modificada con éxito: " +
-                        String.format("%02d:%02d - %02d:%02d", hora, minutos, hora, minutos + 30));
+                System.out.println("Cita modificada con éxito:");
+                System.out.println(citas[nuevaFranja][tipoActual][nuevoHueco]);
+                System.out.println("Nuevo Medico Asociado: " + consultas[nuevaFranja].getMedico().getNombre());
             } else {
                 System.out.println("El hueco seleccionado para la nueva franja horaria no está disponible. Intente nuevamente.");
             }
@@ -75,12 +84,17 @@ public class Clinica {
 
         for (int i = 0; i < NUM_HUECOS_POR_FRANJA; i++) {
             if (citas[franja][tipo][i] == null) {
-                int hora = inicioHora + i / 2;
-                int minutos = (i % 2 == 0) ? 0 : 30;
-                String horaInicio = String.format("%02d:%02d", hora, minutos);
-                String horaFin = String.format("%02d:%02d", hora, minutos + 30);
+                int horaInicio = inicioHora + i / 2;
+                int minutosInicio = (i % 2 == 0) ? 0 : 30;
+                int horaFin = horaInicio;
+                int minutosFin = minutosInicio + 30;
 
-                System.out.println((i + 1) + ". " + "(" + horaInicio + " - " + horaFin + ")");
+                if (minutosFin == 60) {
+                    horaFin += 1;
+                    minutosFin = 0;
+                }
+
+                System.out.println((i + 1) + ". " + String.format("%02d:%02d - %02d:%02d", horaInicio, minutosInicio, horaFin, minutosFin));
             }
         }
     }
