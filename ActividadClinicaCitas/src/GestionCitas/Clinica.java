@@ -60,7 +60,6 @@ public class Clinica {
                 String horaInicio = String.format("%02d:%02d", hora, minutos);
                 String horaFin = String.format("%02d:%02d", hora, minutos);
             	
-            	
             	System.out.println((i + 1) + ".  " + "(" + horaInicio + " - " + horaFin + ")") ;
             }
         }
