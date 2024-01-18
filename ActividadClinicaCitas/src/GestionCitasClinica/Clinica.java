@@ -28,8 +28,16 @@ public class Clinica {
             if (contarCitasPorTipo(tipo) < NUM_CITAS_POR_CONSULTA) {
                 citas[franja][tipo][hueco] = new Cita(dni, consultas[franja].getNumero(), tipo, hora + hueco / 2, minutos);
                 System.out.println("Cita reservada con éxito:");
-                System.out.println(citas[franja][tipo][hueco]);
-                System.out.println("Medico Asociado: " + consultas[franja].getMedico().getNombre());
+                System.out.println("DNI: " + citas[franja][tipo][hueco].getDni());
+                System.out.println("Consulta Número: " + citas[franja][tipo][hueco].getConsultaNumero());
+                System.out.println("Tipo de cita: " + (citas[franja][tipo][hueco].getTipo() == 0 ? "Revisión" : "Tratamiento"));
+                System.out.println("Médico Asociado: " + consultas[franja].getMedico().getNombre());
+                System.out.println("Hora: " + String.format("%02d:%02d - %02d:%02d",
+                        citas[franja][tipo][hueco].getHora(),
+                        citas[franja][tipo][hueco].getMinutos(),
+                        (citas[franja][tipo][hueco].getHora() + (citas[franja][tipo][hueco].getMinutos() + 30) / 60) % 24,
+                        (citas[franja][tipo][hueco].getMinutos() + 30) % 60));
+
             } else {
                 System.out.println("Ha alcanzado el límite de citas para este tipo. No se puede reservar más.");
             }
@@ -43,10 +51,10 @@ public class Clinica {
 
         for (int i = 0; i < NUM_CONSULTAS; i++) {
             for (int j = 0; j < NUM_HUECOS_POR_FRANJA; j++) {
-                if (citas[0][tipo][j] != null && citas[0][tipo][j].getDni() != null) {
+                if (citas[0][tipo][j] != null && citas[0][tipo][j].getDni() != null && citas[0][tipo][j].getConsultaNumero() == i + 1) {
                     contador++;
                 }
-                if (citas[1][tipo][j] != null && citas[1][tipo][j].getDni() != null) {
+                if (citas[1][tipo][j] != null && citas[1][tipo][j].getDni() != null && citas[1][tipo][j].getConsultaNumero() == i + 1) {
                     contador++;
                 }
             }
@@ -54,6 +62,7 @@ public class Clinica {
 
         return contador;
     }
+
 
     public void modificarCita(String dni, int tipoActual, int franjaActual, int huecoActual,
                                int nuevaFranja, int nuevoHueco) {
