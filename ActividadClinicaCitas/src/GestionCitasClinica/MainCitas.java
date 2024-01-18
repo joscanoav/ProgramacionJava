@@ -1,4 +1,5 @@
 package GestionCitasClinica;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainCitas {
@@ -8,8 +9,9 @@ public class MainCitas {
 
         while (true) {
             mostrarMenu();
+            try {
             int opcion = scanner.nextInt();
-
+            scanner.nextLine();
             switch (opcion) {
                 case 1:
                     solicitarCita(clinica, scanner);
@@ -25,10 +27,16 @@ public class MainCitas {
                     System.out.println("Opción no válida. Intente nuevamente.");
                     break;
             }
+        }catch (InputMismatchException e) {
+        	System.out.println("Error: Ingrese un numero valido");
+        	scanner.next();
+        	continue;
         }
+      }
     }
-
+    
     public static void mostrarMenu() {
+        System.out.println("\n**** Bienvenido a la Clinica IFP ****");
         System.out.println("\nMenú Principal:");
         System.out.println("1. Solicitar cita");
         System.out.println("2. Modificar cita");
