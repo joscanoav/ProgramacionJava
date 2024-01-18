@@ -2,6 +2,7 @@ package GestionCitasClinica;
 import java.util.Scanner;
 
 public class Clinica {
+	// Se crean estos atributos para que no se puedan modificar
     private static final int NUM_CONSULTAS = 10;
     private static final int NUM_CITAS_POR_CONSULTA = 5;
     private static final int NUM_HUECOS_POR_FRANJA = 10;
@@ -9,6 +10,7 @@ public class Clinica {
     private Cita[][][] citas;  // [consulta][tipo][hueco]
     private Consulta[] consultas;
 
+    // Se genera los constructores y atributos de citas y consultas
     public Clinica() {
         citas = new Cita[NUM_CONSULTAS][2][NUM_HUECOS_POR_FRANJA];
         consultas = new Consulta[NUM_CONSULTAS];
