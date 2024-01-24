@@ -1,5 +1,4 @@
 package GestionCitasClinica;
-import java.util.Scanner;
 
 public class Clinica {
 	// Se crean estos atributos para que no se puedan modificar
@@ -70,8 +69,7 @@ public class Clinica {
                                int nuevaFranja, int nuevoHueco) {
         if (citas[franjaActual][tipoActual][huecoActual] != null) {
             if (citas[nuevaFranja][tipoActual][nuevoHueco] == null) {
-                int hora = (nuevaFranja == 0) ? 9 : 16;
-                int minutos = nuevoHueco % 2 == 0 ? 0 : 30;
+
 
                 citas[nuevaFranja][tipoActual][nuevoHueco] = citas[franjaActual][tipoActual][huecoActual];
                 citas[franjaActual][tipoActual][huecoActual] = null;
@@ -91,7 +89,6 @@ public class Clinica {
         System.out.println("Huecos disponibles:");
 
         int inicioHora = (franja == 0) ? 9 : 16;
-        int finHora = (franja == 0) ? 14 : 21;
 
         for (int i = 0; i < NUM_HUECOS_POR_FRANJA; i++) {
             if (citas[franja][tipo][i] == null) {

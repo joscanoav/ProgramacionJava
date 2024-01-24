@@ -9,9 +9,12 @@ public class Ejercicio99 {
 		Scanner scanner = new Scanner(System.in);
 		String frase;
 		String[] palabras;
-		System.out.println("Introduce una frase: ");
+
+		System.out.print("Introduce una frase: ");
 		frase = scanner.nextLine();
+
 		palabras = frase.split(" ");
+
 		System.out.println(Arrays.toString(palabras));
 	}
 
