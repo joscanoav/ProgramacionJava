@@ -2,17 +2,20 @@ package compraEntradasCine;
 
 public class Butaca {
 	private boolean ocupada;
+	private String emailComprador;
 	
 	// Se genera el costructor de la clase Butaca
 	// Se llama cuando se crea una nueva Butaca
 	// Se genera un constructor sin parametros
 	// Proporciona una forma predeterminada de inicializar una butaca sin tener que especificar su estado de ocupación
 	// Butaca butaca = new Butaca(); Es util para espeficar desocuapada por defecto
-	public Butaca() {
+
+	public Butaca( ) {
 		//Al principio la butaca esta desocupada
 		this.ocupada = false;
+		this.emailComprador = null;
 	}
-	
+
 	// Se crea el metodo para verificar si la butaca esta ocupada
 	// A diferencia de una variable, los metodos realizan tareas o operaciones especificas
 	//Este metodo no almacena datos, si no consulta si esta ocupada
@@ -29,15 +32,24 @@ public class Butaca {
 		return ocupada;
 	}
 	
+	//Metodo para obtener email del comprado
+	public String getEmailComprador() {
+		return emailComprador;
+	}
 	//Se aplica metodo void para no delver un valor
 	// Solo para al llamarlo cumplir la accion que tienen 
 	
-	public void ocupar() {
-	 this.ocupada = true; // marcar ocupada	
+	public void ocupar(String emailComprador) {
+	 this.ocupada = true; // marcar ocupada
+	 this.emailComprador = emailComprador;
 	}
 	
+
+
+
 	public void desocupar() {
 	  this.ocupada = false;// marcar desocupada
+	  this.emailComprador=null; //Eliminar el email
 	}
 
 	

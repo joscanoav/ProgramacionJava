@@ -52,10 +52,10 @@ public class Sala {
 	}
 	
 	// Metodo para reservar una Butaca
-	public boolean reservarButaca(int fila, int columna) {
+	public boolean reservarButaca(int fila, int columna, String emailComprador) {
 		Butaca butaca = getButaca(fila, columna);
 		if (butaca != null && !butaca.isOcupada()) {
-			butaca.ocupar();
+			butaca.ocupar(emailComprador);
 			return true; //Reserva exitosa
 		}
 		
@@ -66,12 +66,12 @@ public class Sala {
 	public void mostrarAsientos() {
 		System.out.println("Estado de los asientos: ");
 		
-		for(int i=0; 1 < butacas.length;i++) {
+		for(int i=0; i < butacas.length;i++) {
 			for(int j = 0; j < butacas[0].length;j++) {
 				if(butacas[i][j].isOcupada()) {
-					System.out.println("[x]");// Asiento Ocupado
+					System.out.print("[x]");// Asiento Ocupado
 				}else {
-					System.out.println();//Asiento disponible
+					System.out.print("[ ]");//Asiento disponible
 				}
 			}
 			System.out.println();

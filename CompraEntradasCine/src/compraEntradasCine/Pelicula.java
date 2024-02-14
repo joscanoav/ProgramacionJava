@@ -4,13 +4,18 @@ public class Pelicula {
 	
 	private String titulo;
 	private int duracion;
+	private double precioEntrada;
+	private String horario;
 	
 	
-	public Pelicula(String titulo, int duracion) {
+	
+	public Pelicula(String titulo, int duracion, double precioEntrada, String horario) {
 		this.titulo = titulo;
 		this.duracion = duracion;
+		this.precioEntrada = precioEntrada;
+		this.horario = horario;
 	}
-	
+
 	//Se utiliza get para acceder a valores privados de una clase
 	// Es un medio controlado y seguro para acceder a atributos desde fuera de clase
 	// practica comun es usar encapsulamiento
@@ -30,7 +35,23 @@ public class Pelicula {
 
     public int getDuracion() {
         return duracion;
-    }	
+    }
+
+	public double getPrecioEntrada() {
+		return precioEntrada;
+	}
+
+	public String getHorario() {
+		return horario;
+	}
+
+
+    
+    
+    
+    
+    
+    
 	
 
 }
