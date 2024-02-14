@@ -75,10 +75,14 @@ public class Cine {
 
 	                System.out.println("Ingrese la columna de la butaca:");
 	                int columna = scanner.nextInt();
+	                
+	                System.out.println("Ingrese su correo electrónico:");
+	                String emailComprador = scanner.next();
+
 
 	                // Verificar disponibilidad y realizar reserva
-	                if (salaSeleccionada.reservarButaca(fila, columna, "correo@ejemplo.com")) {
-	                    System.out.println("Reserva exitosa. ¡Disfrute de la película!");
+	                if (salaSeleccionada.reservarButaca(fila, columna, emailComprador)) {
+	                    System.out.println("Reserva exitosa para : " + emailComprador + "¡Disfrute de la película!");
 	                } else {
 	                    System.out.println("La butaca no está disponible para reserva. Inténtelo de nuevo.");
 	                }

@@ -9,8 +9,10 @@ public class CineMain {
 		Pelicula pelicula2 = new Pelicula("Matrix",150,12.0,"20:30");
 		
 		Butaca[][] butacasSala1 = new Butaca[5][10];
-		Butaca[][] butacasSala2 = new Butaca[6][12];
+		Butaca[][] butacasSala2 = new Butaca[5][10];
 		
+		
+		// Recorrer cada butaca y crean nuevo objeto butaca para inicializar
 		for(int i= 0; i < 5; i++) {
 			for(int j=0;j<10;j++) {
 				butacasSala1[i][j] = new Butaca();
@@ -26,9 +28,11 @@ public class CineMain {
 		Sala sala1 = new Sala(1,pelicula1,butacasSala1);
 		Sala sala2 = new Sala(2, pelicula2, butacasSala2);
 		
+		// Se crea array llamado cine para crear dos salas 
+		
 		Sala[] salas = {sala1, sala2};
 		
-		Cine cine = new Cine("Cine Planet",200,salas);
+		Cine cine = new Cine("Cine Planet",50,salas);
 		//Realizar operaciones en el cine
 		Scanner scanner = new Scanner(System.in);
         int opcion;

@@ -32,11 +32,11 @@ public class Butaca {
 		return ocupada;
 	}
 	
-	//Metodo para obtener email del comprado
+	//Metodo para obtener email del comprador
 	public String getEmailComprador() {
 		return emailComprador;
 	}
-	//Se aplica metodo void para no delver un valor
+	//Se aplica metodo void para no devolvera un valor
 	// Solo para al llamarlo cumplir la accion que tienen 
 	
 	public void ocupar(String emailComprador) {
