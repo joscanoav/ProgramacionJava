@@ -7,14 +7,21 @@ public class Cine {
     private String nombre;
     private int aforo;
     private Sala[] salas;
+    private int butacasLibres;
+    private double totalIngreso;
 
-    public Cine(String nombre, int aforo, Sala[] salas) {
-        this.nombre = nombre;
-        this.aforo = aforo;
-        this.salas = salas;
-    }
 
-    public void visualizarInformacion() {
+   
+    public Cine(String nombre, int aforo, Sala[] salas, int butacasLibres, double totalIngreso) {
+		super();
+		this.nombre = nombre;
+		this.aforo = aforo;
+		this.salas = salas;
+		this.butacasLibres = aforo;
+		this.totalIngreso = 0.0;
+	}
+
+	public void visualizarInformacion() {
         StringBuilder info = new StringBuilder();
         info.append("Nombre del cine: ").append(nombre).append("\n");
         info.append("Aforo total: ").append(aforo).append("\n");

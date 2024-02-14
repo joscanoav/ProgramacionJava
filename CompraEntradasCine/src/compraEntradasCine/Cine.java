@@ -5,14 +5,23 @@ public class Cine {
 	private String nombre;
 	private int aforo;
 	private Sala[] salas;
+	private int butacasLibres;
+	private double totalIngresos;
 	
 	// Se generan los constructores con los valores para inicializar los valores
 	// nombre del cine, el aforo total y un arreglo de salas como parámetros
-	public Cine(String nombre, int aforo, Sala[] salas) {
+
+	public Cine(String nombre, int aforo, Sala[] salas, int butacasLibres, double totalIngresos) {
+		super();
 		this.nombre = nombre;
 		this.aforo = aforo;
 		this.salas = salas;
+		this.butacasLibres = aforo;
+		this.totalIngresos = 0.0;
 	}
+	
+	
+	
 	// Se registra el primer metodo void ya que no devuelve ningun
 	//valor, solo es imprimir informacion
 	// En este caso no es static lo que implica que 
@@ -28,6 +37,7 @@ public class Cine {
 	public void visualizarInformacion() {
 		System.out.println("Nombre del cine: " + nombre);
 		System.out.println("Aforo total " + aforo);
+		System.out.println("Butacas disponibles: " + butacasLibres);
 		
 		for (Sala sala : salas) {
 			System.out.println("Sala " + sala.getId() + ":");
@@ -39,6 +49,8 @@ public class Cine {
 
 	}
 	
+
+
 	//Este metodo permite al usuario la disponibilidad
 	//de asientos en una sala
 	
@@ -131,4 +143,23 @@ public class Cine {
 		return null;
 	}
 	
+	public int getButacasLibres() {
+        return butacasLibres;
+    }
+
+    private void reservarButaca(int cantidad) {
+        butacasLibres -= cantidad;
+    }
+
+    private void desocuparButaca(int cantidad) {
+        butacasLibres += cantidad;
+    }
+
+    public double getTotalIngresos() {
+        return totalIngresos;
+    }
+
+    private void venderBoleta(double precio) {
+        totalIngresos += precio;
+    }
 }

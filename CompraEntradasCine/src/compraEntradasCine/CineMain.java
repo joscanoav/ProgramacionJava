@@ -19,8 +19,8 @@ public class CineMain {
 			}
 		}
 		
-		for( int i=0; i < 6; i++) {
-			for(int j=0; j<12; j++) {
+		for( int i=0; i < 5; i++) {
+			for(int j=0; j<10; j++) {
 				butacasSala2[i][j]=new Butaca();
 			}
 		}
@@ -32,7 +32,7 @@ public class CineMain {
 		
 		Sala[] salas = {sala1, sala2};
 		
-		Cine cine = new Cine("Cine Planet",50,salas);
+		Cine cine = new Cine("Cine Planet",50, salas,50,0.0);
 		//Realizar operaciones en el cine
 		Scanner scanner = new Scanner(System.in);
         int opcion;

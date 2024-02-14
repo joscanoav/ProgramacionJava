@@ -62,6 +62,13 @@ public class Sala {
 		return false; // La butaca no esta disponible para reserva
 	}
 	
+    public void desocuparButaca(int fila, int columna) {
+        Butaca butaca = getButaca(fila, columna);
+        if (butaca != null && butaca.isOcupada()) {
+            butaca.desocupar();
+        }
+    }
+	
 	// Metodo para mostrar la matriz de asientos
 	public void mostrarAsientos() {
 		System.out.println("Estado de los asientos: ");
