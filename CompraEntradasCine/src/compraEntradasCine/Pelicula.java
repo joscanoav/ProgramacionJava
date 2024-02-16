@@ -45,13 +45,4 @@ public class Pelicula {
 		return horario;
 	}
 
-
-    
-    
-    
-    
-    
-    
-	
-
 }
