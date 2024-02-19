@@ -7,8 +7,11 @@ import java.util.Scanner;
 */
 
 public class ArrayCuantosParesImpares {
-	// Se crea un metodo public, se puede leer
-	//static poque se puede usar en este
+	// Se crea un metodo public, se puede leer desde dentro y fuera del programa
+	//static pertenece a la clase. Puede invocarse sin necesidad de un objeto
+	// El metodo main no devuelve un valor
+	//String - Arrays de cadenas de texto de nombre args
+	
 	public static void main(String[] args) {
 		// Se crea una instancia
 		Scanner sc = new Scanner(System.in);
