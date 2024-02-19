@@ -26,8 +26,8 @@ public class Main {
 	        Sala sala2 = new Sala(2, pelicula2, butacasSala2);
 
 	        Sala[] salas = {sala1, sala2};
-
-	        Cine cine = new Cine("Cine Planet", 50, salas,50,);
+	        
+	        Cine cine = new Cine("Cine Planet", 50, salas,50, 15);
 
 	        int opcion;
 	        do {
