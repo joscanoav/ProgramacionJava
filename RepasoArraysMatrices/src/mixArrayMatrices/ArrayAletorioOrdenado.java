@@ -7,6 +7,7 @@ public class ArrayAletorioOrdenado {
 
 	public static void main(String[] args) {
 		
+				
 		int longitud = 4;
 		int[] array = new int[longitud];
 		boolean desordenado = true;

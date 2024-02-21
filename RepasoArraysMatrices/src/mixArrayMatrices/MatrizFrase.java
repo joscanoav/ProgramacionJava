@@ -21,7 +21,7 @@ public class MatrizFrase {
 			letras [i] = palabras[i].split(" ");
 		}
 		
-		for ( palabra : letras) {
+		for ( palabras : letras) {
 			System.out.println();
 		}
 		
