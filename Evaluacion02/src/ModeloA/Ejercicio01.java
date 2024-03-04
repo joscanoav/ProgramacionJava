@@ -1,11 +1,12 @@
 package ModeloA;
 
 import java.lang.reflect.Array;
+import java.util.Iterator;
 
 public class Ejercicio01 {
 
 	public static void main(String[] args) {
-		int[] numeros = {2,3,4,3,4,2,0};
+		int[] numeros = {2,4,12,24,55,110};
 		int menor = numeros[0];
 		int mayor = numeros[0];
 		
@@ -23,8 +24,16 @@ public class Ejercicio01 {
 		System.out.println("Menor : " + menor);
 		System.out.println("Mayor : " + mayor);
 		
+		for (int i = 0; i < numeros.length - 1; i++) {
+			if (numeros[i] == numeros[i+1] / 2) {
+		        System.out.println("SI");
+			}else {
+				System.out.println("NO");
+			}
+			
+			
+		}
 	}
 
-
-	}
+}
 
