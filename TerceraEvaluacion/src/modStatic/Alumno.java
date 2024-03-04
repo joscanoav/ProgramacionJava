@@ -6,15 +6,15 @@ public class Alumno {
 	
 	public Alumno(String nombre, String centro) {
 		this.nombre = nombre;
-		this.centro = centro;
+		Alumno.centro = centro;
 	}
 
-	public String getCentro() {
+	public static String getCentro() {
 		return centro;
 	}
 
-	public void setCentro(String centro) {
-		this.centro = centro;
+	public static void setCentro(String centro) {
+		Alumno.centro = centro;
 	}
 
 	public String getNombre() {
