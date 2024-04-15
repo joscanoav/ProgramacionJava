@@ -40,7 +40,7 @@ public class Main {
         } while (respuesta.equalsIgnoreCase("Sí"));
 
         // Generar ticket de compra
-        double total = farmacia.generarTicket(productosSeleccionados);
+        //double total = farmacia.generarTicket(productosSeleccionados);
         System.out.println("¡Gracias por su compra!");
     }
 }
