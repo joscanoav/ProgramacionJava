@@ -54,7 +54,5 @@ public class Direccion {
 	public void setVia(String via) {
 		this.via = via;
 	}
-    
-    
-    
+     
 }

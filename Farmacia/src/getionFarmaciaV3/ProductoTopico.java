@@ -20,12 +20,24 @@ public class ProductoTopico extends Producto {
 		return pao;
 	}
 
+	public void setPao(String pao) {
+		this.pao = pao;
+	}
+
 	public String getConsistencia() {
 		return consistencia;
+	}
+
+	public void setConsistencia(String consistencia) {
+		this.consistencia = consistencia;
 	}
 
 	public List<String> getZonasAplicacion() {
 		return zonasAplicacion;
 	}
-  
+
+	public void setZonasAplicacion(List<String> zonasAplicacion) {
+		this.zonasAplicacion = zonasAplicacion;
+	}
+
 }

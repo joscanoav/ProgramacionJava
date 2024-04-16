@@ -17,10 +17,16 @@ public class ProductoOral extends Producto {
 		return dosisMaximaDiaria;
 	}
 
+	public void setDosisMaximaDiaria(double dosisMaximaDiaria) {
+		this.dosisMaximaDiaria = dosisMaximaDiaria;
+	}
 
 	public boolean isTomarConComida() {
 		return tomarConComida;
 	}
 
+	public void setTomarConComida(boolean tomarConComida) {
+		this.tomarConComida = tomarConComida;
+	}
 
 }
