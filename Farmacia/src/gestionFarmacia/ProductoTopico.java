@@ -19,6 +19,6 @@ public class ProductoTopico extends Producto {
 	public void setPao(int pao) {
 		this.pao = pao;
 	}
-
-
 }
+
+
