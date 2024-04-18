@@ -4,8 +4,6 @@
     <fullyQualifiedTypeName name="Objetos.Persona"/>
     <fullyQualifiedTypeName name="Principal.MainRobotGalletas"/>
     <fullyQualifiedTypeName name="Objetos.Punto"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="Objetos.Hospital"/>
     <fullyQualifiedTypeName name="Objetos.Fecha"/>
     <fullyQualifiedTypeName name="Actividad3.Celula"/>
@@ -24,6 +22,10 @@
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>
