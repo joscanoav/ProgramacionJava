@@ -15,7 +15,6 @@ public class MainVeterinaria {
         snoopy.agregarVacuna("Moquillo", LocalDate.of(2023, 3, 15), "Biocan", 1, new ArrayList<>(), false);
         snoopy.agregarVacuna("Antiparasitaria", LocalDate.of(2023, 7, 10), "Ceva", 1, List.of("Parásitos intestinales"), false);
 
-
         // Mostrar información de cada mascota
         snoopy.mostrarInformacion();
         snoopy.mostrarInformacionEspecifica();
