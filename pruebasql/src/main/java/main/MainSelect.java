@@ -1,51 +1,25 @@
 package main;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
-import conexion.Conexion;
 import entidades.Actor;
+import queries.ActorQueries;
 
 public class MainSelect {
 
 	public static void main(String[] args) {
 		
-		ArrayList<Actor> actores = new ArrayList<Actor>();
-
-		// Para una consulta SELECT
-		try (Connection connection = Conexion.open()) {
-			// Connection connection = Conexion.open() - Si se hace la conexion de esta manera
-			// connection.close(); si encaso ocurre un problema la conexion no se cierra y se hace manualmente
-			String query = "SELECT * FROM actor WHERE first_name LIKE 'E%'";
-			
-			try (PreparedStatement ps = connection.prepareStatement(query)){
-				// PreparedStatement ps = connection.prepareStatement(query) - En formato Objeto
-				// no se pone catch porque  ya esta catch
-				
-				try(ResultSet rs = ps.executeQuery()){
-					
-					while(rs.next()) {
-						int id = rs.getInt("actor_id"); // rs.getInt(1)
-						String nombre = rs.getString("first_name");
-						String apellido = rs.getString("last_name");
-						String ultimaActualizacion = rs.getString("last_update");
-						
-						Actor newActor = new Actor(id, nombre, apellido, ultimaActualizacion);
-						
-						System.out.println(newActor);
-						actores.add(newActor);
-					}
-					
-				}
+		/*
+		 * for(Actor a : ActorQueries.getActorBySearch("E")) {
+		 
+			System.out.println(a);
+			*/
+			Actor a = new Actor(0,"ACTOR NUEVO4","...","2024-04-22 09:34:33");
+			if (ActorQueries.insertActor(a)){
+				System.out.println("Insert con exito");
+			} else {
+				System.out.println("Error en insert");
 			}
 			
-		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println(ActorQueries.getActorByID(190));
 		}
-		
 	}
 
-}
