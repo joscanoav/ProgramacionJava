@@ -20,6 +20,7 @@ public class MainSelect {
 			}
 			
 			System.out.println(ActorQueries.getActorByID(190));
+			System.out.println(ActorQueries.deleteActorByID(202));
 		}
 	}
 

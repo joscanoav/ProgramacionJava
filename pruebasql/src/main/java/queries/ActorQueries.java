@@ -154,4 +154,31 @@ public class ActorQueries {
 		return flag;
 	}
 	
+	//-------
+	
+	public static Actor deleteActorByID(int id) {
+		
+		Actor actor = null;
+
+		try (Connection connection = Conexion.open()) {
+			String query = "DELETE * FROM actor WHERE actor_id=?";
+			
+			try (PreparedStatement ps = connection.prepareStatement(query)){
+				ps.setInt(1, id); // Sustituye la primera ? (1 -> 1ª desde la izquierda) por pattern
+
+
+			}
+			
+		} catch (SQLException e) {
+			System.err.println("ERROR:");
+			e.printStackTrace();
+		}
+		
+		return actor;
+		
+	}
+	
+	
+	
+	
 }
