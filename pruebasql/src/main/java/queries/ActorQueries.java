@@ -166,7 +166,6 @@ public class ActorQueries {
 			try (PreparedStatement ps = connection.prepareStatement(query)){
 				ps.setInt(1, id); // Sustituye la primera ? (1 -> 1ª desde la izquierda) por pattern
 
-
 			}
 			
 		} catch (SQLException e) {
