@@ -1,20 +1,19 @@
-package ModeloA;
+package pruebaA;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Ejercicio02 {
+public class Ejercicio2 {
 
 	public static void main(String[] args) {
-
 		String path = "resultado.txt";
 		Scanner sc = new Scanner(System.in);
 		String line;
 
 		try {
-
+			
 			PrintWriter pw = new PrintWriter(new FileWriter(path));
 			
 			do {
@@ -32,24 +31,19 @@ public class Ejercicio02 {
 
 	}
 
+
 	private static String ponerParentesis(String line) {
 		String newLine = "";
 
 		for (int i = 0; i < line.length(); i++) {
-
-			
-			newLine += "(" + line.charAt(i) + ")";
+			newLine += line.charAt(i) + "\n";
 
 		}
-
-		return newLine;
+			
+		return newLine.toUpperCase();
+		
 	}
 
 }
-
-			
-	
-
-
 
 
