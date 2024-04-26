@@ -1,0 +1,13 @@
+Nombre del Producto: Manzanas
+Cantidad Disponible: 10
+Precio por Unidad: $0,50
+
+Nombre del Producto: Naranjas
+Cantidad Disponible: 20
+Precio por Unidad: $0,75
+
+Nombre del Producto: Plátanos
+Cantidad Disponible: 15
+Precio por Unidad: $0,40
+
+Valor Total del Inventario: $26,00

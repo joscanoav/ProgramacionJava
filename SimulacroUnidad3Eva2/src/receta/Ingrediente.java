@@ -1,8 +1,5 @@
 package receta;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 public class Ingrediente {
 	private String nombre;
@@ -10,7 +7,6 @@ public class Ingrediente {
 	private int kilocalorias;
 	
 	public Ingrediente(String nombre, String cantidad, int kilocalorias) {
-		super();
 		this.nombre = nombre;
 		this.cantidad = cantidad;
 		this.kilocalorias = kilocalorias;
@@ -39,14 +35,7 @@ public class Ingrediente {
 	public void setKilocalorias(int kilocalorias) {
 		this.kilocalorias = kilocalorias;
 	}
-
-	public void imprimir(String dirPath) {
-		try {
-		PrintWriter pw = new PrintWriter(new FileWriter(dirPat + "/" + nombre +));
-	} catch (IOException e) {
-		Syste,
-	}
-	}
 	
 }
+
 

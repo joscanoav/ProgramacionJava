@@ -1,0 +1,18 @@
+ID: 12345
+Nombre: Juan
+Apellido: Pérez
+Fecha de Nacimiento: 1998-07-15
+Calificaciones:
+- Matemáticas: 85
+- Inglés: 90
+- Historia: 78
+
+ID: 67890
+Nombre: María
+Apellido: López
+Fecha de Nacimiento: 2000-11-25
+Calificaciones:
+- Matemáticas: 88
+- Inglés: 92
+- Historia: 80
+

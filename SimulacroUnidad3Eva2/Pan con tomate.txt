@@ -1,0 +1,8 @@
+Pan con tomate
+Energía: 110 kilocalorías
+Ingredientes:
+  - Pan (2 rebanadas)
+  - Tomate (2 rodajas)
+Descripción:
+1. Poner el pan en un plato.
+2. Poner el tomate encima.
