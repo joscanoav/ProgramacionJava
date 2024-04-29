@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns:25% 1fr;
+    grid-template-rows:40px 1fr 40px;
+    grid-template-areas: 
+    "zh zh" 
+    "zn zs"  
+    "zf zf";
+
+    background-color: #353535;
+}
+
+header {
+    grid-area: zh;
+    background-color: rgb(138, 156, 238);
+    color: rgb(0, 0, 0); 
+    
+    font-size: large;
+    font-family: 'Workbench', sans-serif;
+    justify-content: center;
+    align-items:center;
+    display: flex;
+
+    box-shadow: 4px 4px 4px rgb(0, 0, 0);
+    margin-bottom: 7px;
+
+    /* Animacion de cambio de color progresibamente */
+    animation: cambioTono2 8s infinite alternate;
+}
+header>p{
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+
+    color: rgb(0, 0, 0); 
+    /* Animacion de cambio de color progresibamente */
+    animation: cambioTono2 4s infinite alternate;
+}
+/* Animacion de cambio de color progresibamente */
+@keyframes cambioTono2 {
+    0% {
+      color: hsl(0, 100%, 50%);
+    }
+    35% {
+        color: hsl(59, 100%, 50%);
+      }
+    50% {
+      color: hsl(118, 100%, 50%);
+    }
+    50% {
+        color: hsl(229, 100%, 50%);
+      }
+    100% {
+      color: hsl(271, 100%, 50%);
+    }
+}
+
+nav {
+    grid-area: zn;
+    background-color: rgb(109, 168, 109);
+    color: rgb(0, 0, 0);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items:right;
+    justify-content:center;
+
+    /* Fondo multicolor */
+    background: linear-gradient(45deg, rgb(51, 80, 51), rgb(104, 165, 104), rgb(173, 248, 173));
+    animation: changeBackground 6s infinite alternate; 
+}
+  @keyframes changeBackground {
+    0% {
+      background-color: rgb(32, 43, 32);
+    }
+    50% {
+      background-color: rgb(104, 165, 104);
+    }
+    100% {
+      background-color: rgb(189, 250, 189);
+    }
+  }
+nav>div{
+    margin: 20px;
+}
+
+section {
+    grid-area: zs;
+    background-color: #353535;
+    color: rgb(255, 255, 255);
+    justify-content:space-between;
+    align-content: space-between;
+}
+section>div{
+    color: rgb(250, 250, 166);
+    margin: 5%;
+    width: 380px;
+    height: 260px;
+    align-items: center;
+   
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+
+    display: block;
+            flex-wrap: wrap;
+            display: flex;
+}
+section>div:hover{
+    cursor: pointer;
+/* Animacion de cambio de color progresibamente */
+animation: cambioTono 3s infinite alternate;
+}
+/* Animacion de cambio de color progresibamente */
+@keyframes cambioTono {
+    10% {
+      background-color: hsl(0, 0%, 50%);
+    }
+    20% {
+        background-color: hsl(0, 0%, 45%);
+      }
+    30% {
+        background-color: hsl(0, 0%, 40%);
+      }
+    40% {
+      background-color: hsl(0, 0%, 35%);
+    }
+    50% {
+      background-color: hsl(0, 0%, 30%);
+    }
+    60% {
+        background-color: hsl(0, 0%, 25%);
+      }
+    70% {
+        background-color: hsl(0, 0%, 20%);
+      }
+    80% {
+      background-color: hsl(0, 0%, 15%);
+    }
+    90% {
+      background-color: hsl(0, 0%, 10%);
+    }
+}
+section>div>img{
+    align-self: center;
+    width: 360px;
+    height: 240px;
+
+        border: 1px solid black;
+        background-color: rgb(118, 194, 207);
+        box-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+footer {
+    grid-area: zf;
+    background-color: rgb(121, 121, 121);
+    color: rgb(0, 0, 0);
+    box-shadow: 4px 4px 4px rgb(0, 0, 0);
+    margin-top: 7px;
+}   
+
+@media screen and (min-width: 900px) {
+
+    section {
+        grid-area: zs;
+        background-color: #353535;
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+        align-content: start;
+    }
+    section>div{
+        color: rgb(250, 250, 166);
+        margin: 0%;
+        width: 390px;
+        height: 260px;
+    }
+
+}
+
+
+
+
+@media screen and (min-width: 1200px) {
+    
+    section {
+        grid-area: zs;
+        background-color: #353535;
+        color: rgb(255, 255, 255);
+        display:flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-content:space-around;
+    }
+    section>div{
+        width: 380px;
+    height: 260px;
+    }
+    section>div>img{
+        align-self: center;
+        width: 360px;
+        height: 240px;
+    }
+}
+
