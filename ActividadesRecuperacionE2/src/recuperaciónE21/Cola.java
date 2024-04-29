@@ -70,13 +70,5 @@ public class Cola {
 		return resultado;
 	}
 	
-
-	
-	
-	
-	
-	
-
-	
 	
 }

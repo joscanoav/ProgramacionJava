@@ -1,8 +1,8 @@
 package recuperaciónE21;
 
 public class Usuario {
-	String nombre;
-	int estrellas;
+	private String nombre;
+	private int estrellas;
 	
 	public Usuario(String nombre, int estrellas) {
 		this.nombre = nombre;
