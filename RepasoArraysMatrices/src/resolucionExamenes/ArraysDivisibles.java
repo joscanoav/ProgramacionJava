@@ -1,10 +1,7 @@
-package preparacionDefinitiva;
+package resolucionExamenes;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
-public class ArrayDivisibleN1N2 {
-
+public class ArraysDivisibles {
+	
 	public static void main(String[] args) {
 		int[] enteros = {2, 4, 7, 14, 49, 8};
 		int n1 = 2; // Asumimos que están leídos por teclado
@@ -38,3 +35,6 @@ public class ArrayDivisibleN1N2 {
 	}
 
 }
+	
+
+

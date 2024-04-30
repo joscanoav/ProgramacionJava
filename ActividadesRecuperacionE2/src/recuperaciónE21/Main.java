@@ -5,82 +5,59 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-	        Scanner scanner = new Scanner(System.in);
+        // Crear usuarios
+        Usuario usuario1 = new Usuario("Alice", 3);
+        Usuario usuario2 = new Usuario("Bob", 4);
+        Usuario usuario3 = new Usuario("Charlie", 5);
+        Usuario usuario4 = new Usuario("Diana", 3);
+        Usuario usuario5 = new Usuario("Eve", 5);
+        Usuario usuario6 = new Usuario("Frank", 4);
+        
+        // Crear una atracción con aforo normal de 3 y aforo VIP de 2
+        Atraccion atraccion = new Atraccion("Montaña Rusa", 3, 2);
+        
+        // Agregar usuarios a la cola normal
+        atraccion.agregarUsuarioColaNormal(usuario1);
+        atraccion.agregarUsuarioColaNormal(usuario2);
+        atraccion.agregarUsuarioColaNormal(usuario3);
+        
+        // Agregar usuarios a la cola VIP
+        atraccion.agregarUsuarioColaVIP(usuario4);
+        atraccion.agregarUsuarioColaVIP(usuario5);
+        
+        // Mostrar las colas de espera
+        System.out.println("Cola normal:");
+        System.out.println(atraccion.verColaNormal());
+        System.out.println("Cola VIP:");
+        System.out.println(atraccion.verColaVIP());
+        
+        // Avanzar las colas de espera, alternando entre VIP y normal
+        System.out.println("\nAvanzando colas de espera:");
+        avanzarColas(atraccion, 3);
+        
+        // Mostrar las colas de espera después de avanzar
+        System.out.println("\nDespués de avanzar las colas:");
+        System.out.println("Cola normal:");
+        System.out.println(atraccion.verColaNormal());
+        System.out.println("Cola VIP:");
+        System.out.println(atraccion.verColaVIP());
+    }
 
-	        // Create the attraction
-	        Atraccion atraccion = new Atraccion("Montaña Rusa", 100, 20);
-
-	        int opcion;
-
-	        do {
-	            System.out.println("\n**Menú**");
-	            System.out.println("1. Añadir usuario a cola");
-	            System.out.println("2. Ver colas de espera");
-	            System.out.println("3. Avanzar cola de espera");
-	            System.out.println("4. Salir");
-
-	            System.out.print("Introduce una opción: ");
-	            opcion = scanner.nextInt();
-	            scanner.nextLine(); // Consume newline
-
-	            switch (opcion) {
-	                case 1:
-	                    agregarUsuario(scanner, atraccion);
-	                    break;
-	                case 2:
-	                    verColas(atraccion);
-	                    break;
-	                case 3:
-	                    avanzarCola(scanner, atraccion);
-	                    break;
-	                default:
-	                    System.out.println("Opción no válida.");
-	            }
-	        } while (opcion != 4);
-
-	        scanner.close();
-	    }
-
-	    private static void agregarUsuario(Scanner scanner, Atraccion atraccion) {
-	        System.out.print("Introduce el nombre del usuario: ");
-	        String nombre = scanner.nextLine();
-
-	        System.out.print("Introduce el número de estrellas (0 para normal): ");
-	        int estrellas = scanner.nextInt();
-	        scanner.nextLine(); // Consume newline
-
-	        if (estrellas > 0) {
-	            atraccion.agregarUsuarioColaVIP(new Usuario(nombre, estrellas));
-	        } else {
-	            atraccion.agregarUsuarioColaNormal(new Usuario(nombre, estrellas));
-	        }
-	    }
-
-	    private static void verColas(Atraccion atraccion) {
-	        System.out.println("\nCola normal:");
-	        System.out.println(atraccion.verColaNormal());
-	        System.out.println("\nCola VIP:");
-	        System.out.println(atraccion.verColaVIP());
-	    }
-
-	    private static void avanzarCola(Scanner scanner, Atraccion atraccion) {
-	        System.out.print("¿Cuántos usuarios quieres avanzar? ");
-	        int cantidad = scanner.nextInt();
-	        scanner.nextLine(); // Consume newline
-
-	        for (int i = 0; i < cantidad; i++) {
-	            if (!atraccion.colaVIP.estaVacia()) {
-	                Usuario usuario = atraccion.colaVIP.eliminarUsuario();
-	                System.out.println(usuario.getNombre() + " (VIP) se ha montado");
-	            } else if (!atraccion.colaNormal.estaVacia()) {
-	                Usuario usuario = atraccion.colaNormal.eliminarUsuario();
-	                System.out.println(usuario.getNombre() + " (normal) se ha montado");
-	            } else {
-	                System.out.println("No hay más usuarios en las colas.");
-	                break;
-	            }
-	        }
-
-	        System.out.println("\nUsuarios avanzados: " + cantidad);
-	    }
-	}
+    public static void avanzarColas(Atraccion atraccion, int numAvances) {
+        for (int i = 0; i < numAvances; i++) {
+            if (i % 2 == 0) {
+                Usuario vipUsuario = atraccion.siguienteUsuarioVIP();
+                if (vipUsuario != null) {
+                    System.out.println(vipUsuario.getNombre() + " se ha montado en la atracción (VIP).");
+                    atraccion.avanzarColaVIP();
+                }
+            } else {
+                Usuario normalUsuario = atraccion.siguienteUsuarioNormal();
+                if (normalUsuario != null) {
+                    System.out.println(normalUsuario.getNombre() + " se ha montado en la atracción (normal).");
+                    atraccion.avanzarColaNormal();
+                }
+            }
+        }
+    }
+}
