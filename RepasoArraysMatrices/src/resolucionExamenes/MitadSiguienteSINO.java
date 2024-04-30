@@ -1,4 +1,7 @@
 package resolucionExamenes;
+/*Haz un programa que, dado un array unidimensional de enteros escrito en código, muestre cuáles de ellos cumplen la condición "ser la mitad
+ *  del siguiente" (el último se compara con el primero). Ejemplo de cómo debería salir por consola:*/
+
 
 public class MitadSiguienteSINO {
     public static void main(String[] args) {

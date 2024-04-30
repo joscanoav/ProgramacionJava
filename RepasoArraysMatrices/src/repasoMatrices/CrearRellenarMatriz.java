@@ -1,10 +1,11 @@
 package repasoMatrices;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CrearRellenarMatriz {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         // Pedir al usuario el número de filas y columnas
@@ -19,8 +20,18 @@ public class CrearRellenarMatriz {
         // Solicitar al usuario que ingrese los valores para cada posición de la matriz
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                System.out.print("Ingresa el valor para la posición (" + i + ", " + j + "): ");
-                matriz[i][j] = scanner.nextInt();
+                boolean validInput = false;
+                while (!validInput) {
+                    try {
+                        System.out.print("Ingresa el valor para la posición (" + i + ", " + j + "): ");
+                        int valor = scanner.nextInt();
+                        matriz[i][j] = valor;
+                        validInput = true;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Error: Ingresa un valor numérico válido.");
+                        scanner.next(); // Consume the invalid input
+                    }
+                }
             }
         }
 

@@ -31,10 +31,8 @@ public class ActorQueries {
 						int id = rs.getInt("actor_id"); // rs.getInt(1)
 						String nombre = rs.getString("first_name");
 						String apellido = rs.getString("last_name");
-						String ultimaActualizacion = rs.getString("last_update");
-						
+						String ultimaActualizacion = rs.getString("last_update");	
 						Actor newActor = new Actor(id, nombre, apellido, ultimaActualizacion);
-						
 						System.out.println(newActor);
 						actores.add(newActor);
 					}

@@ -36,5 +36,57 @@ public class ArraysDivisibles {
 
 }
 	
+//PROMEDIO MODA
+/*
+ * package resolucionExamenes;
 
+import java.util.HashMap;
+import java.util.Map;
+
+public class PromedioModaArray {
+
+    public static void main(String[] args) {
+        int[] numeros = {5, 7, 2, 5, 3, 7, 2, 1, 2}; // Array de prueba
+        double promedio = calcularPromedio(numeros);
+        int moda = calcularModa(numeros);
+
+        System.out.println("Promedio: " + promedio);
+        System.out.println("Moda: " + moda);
+    }
+
+    private static double calcularPromedio(int[] numeros) {
+        int suma = 0;
+        for (int numero : numeros) {
+            suma += numero;
+        }
+        return (double) suma / numeros.length;
+    }
+
+    private static int calcularModa(int[] numeros) {
+        Map<Integer, Integer> conteoNumeros = new HashMap<>();
+        int moda = -1; // Valor por defecto si no hay moda
+        int maxConteo = 0; // Conteo máximo de apariciones
+
+        for (int numero : numeros) {
+            if (conteoNumeros.containsKey(numero)) {
+                conteoNumeros.put(numero, conteoNumeros.get(numero) + 1);
+            } else {
+                conteoNumeros.put(numero, 1);
+            }
+        }
+
+        for (Map.Entry<Integer, Integer> entrada : conteoNumeros.entrySet()) {
+            int valor = entrada.getKey();
+            int conteo = entrada.getValue();
+
+            if (conteo > maxConteo) {
+                maxConteo = conteo;
+                moda = valor;
+            }
+        }
+
+        return moda;
+    }
+}
+*/
 
