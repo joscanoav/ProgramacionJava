@@ -1,40 +1,38 @@
 package main;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
+
+import conexion.Conexion;
+import entidades.Administrador;
 import entidades.Cliente;
-import queries.ClienteQueries;
 
 public class Main {
-
     public static void main(String[] args) {
- 
-    		
-    	Scanner scanner = new Scanner(System.in);
-    
-    	System.out.println("Selecciones una opcion: ");
-    	
-        while (true) {
-            System.out.println("\nMenu:");
-            System.out.println("1. Mostrar clientes");
-            System.out.println("1. Insertar cliente");
-            System.out.println("2. Buscar cliente por ID");
-            System.out.println("3. Eliminar cliente por ID");
-            System.out.println("4. Salir");
-
-            int choice = scanner.nextInt();
-
-            switch (choice) {
-                case 1:
-                    System.out.print("Los clientes de la tienda son: ");
-    		    	ClienteQueries queries = new ClienteQueries();
-    		    	queries.getAllClientes();
-                    break;
-
-               
-            }
+        try (Connection connection = Conexion.open()) {
+            Scanner scanner = new Scanner(System.in);
             
-        }
-	}
-}
-    
+            System.out.println("Bienvenido a la tienda. Elige un modo de operación:");
+            System.out.println("1. Modo Cliente");
+            System.out.println("2. Modo Administrador");
+            System.out.print("Elige una opción: ");
+            
+            int option = scanner.nextInt();
+            scanner.nextLine();  // Consume newline
 
+            if (option == 1) {
+                Cliente clienteMode = new Cliente(connection);
+                clienteMode.start();
+            } else if (option == 2) {
+                Administrador adminMode = new Administrador(connection);
+                adminMode.start();
+            } else {
+                System.out.println("Opción no válida.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+        }
+    }
+}

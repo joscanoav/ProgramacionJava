@@ -21,7 +21,6 @@
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Properties"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-    <fullyQualifiedTypeName name="conexion.Conexion"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="com.mysql.cj.jdbc.PreparedStatementWrapper"/>
@@ -49,7 +48,10 @@
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="queries.ClienteQueries"/>
     <fullyQualifiedTypeName name="java.lang.Package"/>
+    <fullyQualifiedTypeName name="queries.ClienteQueries"/>
+    <fullyQualifiedTypeName name="queries.AdministradorQueries"/>
+    <fullyQualifiedTypeName name="conexion.Conexion"/>
     <fullyQualifiedTypeName name="entidades.Cliente"/>
+    <fullyQualifiedTypeName name="entidades.Administrador"/>
 </qualifiedTypeNameHistroy>

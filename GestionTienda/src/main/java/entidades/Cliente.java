@@ -1,49 +1,50 @@
 package entidades;
+import java.sql.Connection;
+import java.util.Scanner;
+
+import queries.ClienteQueries;
 
 public class Cliente {
-	
-	private int id;
-	private String nombre;
-	
-	
-	public Cliente(int id, String nombre) {
-		this.id = id;
-		this.nombre = nombre;
-	}
+    private Connection connection;
+    private Scanner scanner;
+    private ClienteQueries clienteQueries;
 
+    public Cliente(Connection connection) {
+        this.connection = connection;
+        this.scanner = new Scanner(System.in);
+        this.clienteQueries = new ClienteQueries(connection);
+    }
 
-	public int getId() {
-		return id;
-	}
+    public void start() {
+        boolean exit = false;
 
+        while (!exit) {
+            System.out.println("\nMenú Cliente:");
+            System.out.println("1. Ver catálogo de productos");
+            System.out.println("2. Seleccionar productos para agregar a la compra");
+            System.out.println("3. Efectuar la compra e imprimir el ticket");
+            System.out.println("4. Salir");
+            System.out.print("Elige una opción: ");
+            
+            int option = scanner.nextInt();
+            scanner.nextLine();  // Consume newline
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	 @Override
-	    public String toString() {
-	        return "Cliente{" +
-	                "id=" + id +
-	                ", nombre='" + nombre + '\'' +
-	                '}';
-
-	
-	
-	
+            switch (option) {
+                case 1:
+                    clienteQueries.viewCatalog(scanner);
+                    break;
+                case 2:
+                    clienteQueries.selectProducts(scanner);
+                    break;
+                case 3:
+                    clienteQueries.completePurchase(scanner);
+                    break;
+                case 4:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, inténtalo de nuevo.");
+            }
+        }
+    }
 }
-}
-
-
-
-	
