@@ -89,7 +89,7 @@ public class ClienteQueries {
         System.out.println("\nFinalizar compra:");
         System.out.print("Ingresa el ID del cliente: ");
         int idCliente = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();  // Consume newline*/
 
         // Generar una nueva compra y obtener el ID generado
         try (PreparedStatement ps = connection.prepareStatement(
