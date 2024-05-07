@@ -1,6 +1,7 @@
 Ticket de compra:
 Compra ID: 6
 -------------------------------------------------
-Anillo de plata sencillo x1 - 299,99 cada uno - Total: 299,99
+Anillo de plata con zafiro x2 - 299,99 cada uno - Total: 599,98
+Smartphone x1 - 300,00 cada uno - Total: 300,00
 -------------------------------------------------
-Total de la compra: 299,99
+Total de la compra: 899,98
