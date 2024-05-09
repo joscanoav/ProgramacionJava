@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Welcome to Shopping Cart!</title>
 <%@include file="includes/head.jsp"%>
 </head>
 <body>
-<h1>hello</h1>
+
+<%@include file="includes/navbar.jsp"%>
+<%@include file="includes/footer.jsp"%>
 
 </body>
-<%@include file="includes/footer.jsp"%>
 </html>
