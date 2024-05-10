@@ -12,7 +12,7 @@ public class Conexion {
 	// //127.0.0.1:3306 localhost se puede conectar a cualquier base de dato
 	private static final String URL = "jdbc:mysql://127.0.0.1:3306/sakila";
 	private static final String USUARIO = "root";
-	private static final String PASSWORD = "1964564651";
+	private static final String PASSWORD = "AlumnoIFP";
 	
 	public static Connection open() throws SQLException {
 		Properties props = new Properties();
