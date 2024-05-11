@@ -5,8 +5,11 @@ import java.util.Scanner;
 import queries.ClienteQueries;
 
 public class Cliente {
+	// Declaramos la variable tipo connection para conectarnos a la BBDD
     private Connection connection;
+    // Variable de tipo entrada para el cliente
     private Scanner scanner;
+    // Declaramos una variable ClienteQueries para realizar consultas SQL
     private ClienteQueries clienteQueries;
 
     public Cliente(Connection connection) {
@@ -14,7 +17,7 @@ public class Cliente {
         this.scanner = new Scanner(System.in);
         this.clienteQueries = new ClienteQueries(connection);
     }
-
+    // Metodo para iniciar la interaccion del cliente
     public void start() {
         boolean exit = false;
 

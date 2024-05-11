@@ -1,13 +1,16 @@
 package entidades;
-
+// Importamos la clase connection para conectarnos con el servidor
 import java.sql.Connection;
 import java.util.Scanner;
 
 import queries.AdministradorQueries;
 
 public class Administrador {
+	// Declaramos la variable tipo connection para conectarnos a la BBDD
     private Connection connection;
+    // Variable de tipo entrada para el administrador
     private Scanner scanner;
+    // Declaramos una variable AdministradorQueries para realizar consultas SQL
     private AdministradorQueries adminQueries;
 
     public Administrador(Connection connection) {
@@ -16,6 +19,7 @@ public class Administrador {
         this.adminQueries = new AdministradorQueries(connection);
     }
 
+    // Metodo para iniciar la interaccion del administrador
     public void start() {
         boolean exit = false;
 
