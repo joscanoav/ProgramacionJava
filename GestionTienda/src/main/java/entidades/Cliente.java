@@ -34,13 +34,13 @@ public class Cliente {
 
             switch (option) {
                 case 1:
-                    clienteQueries.viewCatalog(scanner);
+                    clienteQueries.verCatalogo(scanner);
                     break;
                 case 2:
-                    clienteQueries.selectProducts(scanner);
+                    clienteQueries.seleccionarProducto(scanner);
                     break;
                 case 3:
-                    clienteQueries.completePurchase(scanner);
+                    clienteQueries.completarCompra(scanner);
                     break;
                 case 4:
                     exit = true;

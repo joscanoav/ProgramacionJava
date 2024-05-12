@@ -12,12 +12,11 @@ public class AdministradorQueries {
         this.connection = connection;
     }
 
-    public void addNewClient(Scanner scanner) {
+    public void agregarCliente(Scanner scanner) {
         System.out.println("\nAgregar nuevo cliente:");
         System.out.print("Ingresa el ID del cliente: ");
+        // Se agrega al cliente por ID y nombre
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
         System.out.print("Ingresa el nombre del cliente: ");
         String nombre = scanner.nextLine();
 
@@ -25,6 +24,7 @@ public class AdministradorQueries {
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
             ps.setString(2, nombre);
+            // Este método ejecuta la consulta SQL
             ps.executeUpdate();
             System.out.println("Cliente agregado con éxito.");
         } catch (SQLException e) {
@@ -32,24 +32,20 @@ public class AdministradorQueries {
         }
     }
 
-    public void addNewProduct(Scanner scanner) {
+    public void agregarProducto(Scanner scanner) {
         System.out.println("\nAgregar nuevo producto:");
         System.out.print("Ingresa el ID del producto: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
         System.out.print("Ingresa el nombre del producto: ");
         String nombre = scanner.nextLine();
-
         System.out.print("Ingresa el precio del producto: ");
         double precio = scanner.nextDouble();
-        scanner.nextLine();  // Consume newline
-
         String query = "INSERT INTO producto (id, nombre, precio) VALUES (?, ?, ?)";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
             ps.setString(2, nombre);
             ps.setDouble(3, precio);
+            //Ejecuta el SQL 
             ps.executeUpdate();
             System.out.println("Producto agregado con éxito.");
         } catch (SQLException e) {
@@ -57,15 +53,12 @@ public class AdministradorQueries {
         }
     }
 
-    public void modifyClient(Scanner scanner) {
+    public void modificarCliente(Scanner scanner) {
         System.out.println("\nModificar datos de un cliente:");
         System.out.print("Ingresa el ID del cliente: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
         System.out.print("Ingresa el nuevo nombre del cliente: ");
         String nombre = scanner.nextLine();
-
         String query = "UPDATE cliente SET nombre = ? WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setString(1, nombre);
@@ -81,19 +74,14 @@ public class AdministradorQueries {
         }
     }
 
-    public void modifyProduct(Scanner scanner) {
+    public void modificarProducto(Scanner scanner) {
         System.out.println("\nModificar datos de un producto:");
         System.out.print("Ingresa el ID del producto: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
         System.out.print("Ingresa el nuevo nombre del producto: ");
         String nombre = scanner.nextLine();
-
         System.out.print("Ingresa el nuevo precio del producto: ");
         double precio = scanner.nextDouble();
-        scanner.nextLine();  // Consume newline
-
         String query = "UPDATE producto SET nombre = ?, precio = ? WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setString(1, nombre);
@@ -110,17 +98,17 @@ public class AdministradorQueries {
         }
     }
 
-    public void deleteClient(Scanner scanner) {
+    public void borrarCliente(Scanner scanner) {
         System.out.println("\nEliminar un cliente por su ID:");
         System.out.print("Ingresa el ID del cliente: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
         String query = "DELETE FROM cliente WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
-            int rowsAffected = ps.executeUpdate();
-            if (rowsAffected > 0) {
+            int filasAfectadas = ps.executeUpdate();
+            //Si filasAfectadas es mayor que cero, significa que al menos una fila (cliente) 
+            //fue eliminada de la base de datos.
+            if (filasAfectadas > 0) {
                 System.out.println("Cliente eliminado con éxito.");
             } else {
                 System.out.println("No se encontró un cliente con el ID proporcionado.");
@@ -130,17 +118,17 @@ public class AdministradorQueries {
         }
     }
 
-    public void deleteProduct(Scanner scanner) {
+    public void borrarProducto(Scanner scanner) {
         System.out.println("\nEliminar un producto por su ID:");
         System.out.print("Ingresa el ID del producto: ");
         int id = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
         String query = "DELETE FROM producto WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
-            int rowsAffected = ps.executeUpdate();
-            if (rowsAffected > 0) {
+            int filasAfectadas = ps.executeUpdate();
+            //Si filasAfectadas es mayor que cero, significa que al menos una fila (producto) 
+            //fue eliminada de la base de datos.
+            if (filasAfectadas > 0) {
                 System.out.println("Producto eliminado con éxito.");
             } else {
                 System.out.println("No se encontró un producto con el ID proporcionado.");

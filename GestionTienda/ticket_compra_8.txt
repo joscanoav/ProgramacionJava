@@ -2,5 +2,6 @@ Ticket de compra:
 Compra ID: 8
 -------------------------------------------------
 Anillo de plata sencillo x1 - 299,99 cada uno - Total: 299,99
+Anillo de plata con zafiro x2 - 299,99 cada uno - Total: 599,98
 -------------------------------------------------
-Total de la compra: 299,99
+Total de la compra: 899,97

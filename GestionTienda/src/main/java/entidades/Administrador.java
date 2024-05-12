@@ -35,26 +35,25 @@ public class Administrador {
             System.out.print("Elige una opción: ");
             
             int option = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
 
             switch (option) {
                 case 1:
-                    adminQueries.addNewClient(scanner);
+                    adminQueries.agregarCliente(scanner);
                     break;
                 case 2:
-                    adminQueries.addNewProduct(scanner);
+                    adminQueries.agregarProducto(scanner);
                     break;
                 case 3:
-                    adminQueries.modifyClient(scanner);
+                    adminQueries.modificarCliente(scanner);
                     break;
                 case 4:
-                    adminQueries.modifyProduct(scanner);
+                    adminQueries.modificarProducto(scanner);
                     break;
                 case 5:
-                    adminQueries.deleteClient(scanner);
+                    adminQueries.borrarCliente(scanner);
                     break;
                 case 6:
-                    adminQueries.deleteProduct(scanner);
+                    adminQueries.borrarProducto(scanner);
                     break;
                 case 7:
                     exit = true;

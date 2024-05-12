@@ -13,7 +13,7 @@ public class ClienteQueries {
         this.carritoCompra = new ArrayList<>();
     }
 
-    public void viewCatalog(Scanner scanner) {
+    public void verCatalogo(Scanner scanner) {
         System.out.println("\nOpciones de catálogo:");
         System.out.println("1. Ver todos los productos");
         System.out.println("2. Ordenar productos por precio ascendente");
@@ -64,23 +64,19 @@ public class ClienteQueries {
         }
     }
 
-    public void selectProducts(Scanner scanner) {
+    public void seleccionarProducto(Scanner scanner) {
         System.out.println("\nSelección de productos para agregar a la compra:");
         System.out.print("Ingresa el ID del producto que deseas agregar: ");
         int idProducto = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
         System.out.print("Ingresa la cantidad que deseas agregar: ");
         int cantidad = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
-
         ProductoSeleccionado productoSeleccionado = new ProductoSeleccionado(idProducto, cantidad);
         carritoCompra.add(productoSeleccionado);
 
         System.out.println("Producto agregado a la compra.");
     }
 
-    public void completePurchase(Scanner scanner) {
+    public void completarCompra(Scanner scanner) {
         if (carritoCompra.isEmpty()) {
             System.out.println("El carrito de compra está vacío.");
             return;
