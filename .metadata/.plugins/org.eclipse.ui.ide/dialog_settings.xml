@@ -6,7 +6,6 @@
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.buildship.ui.creationwizards"/>
 			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
 	<section name="SaveAsDialogSettings">
