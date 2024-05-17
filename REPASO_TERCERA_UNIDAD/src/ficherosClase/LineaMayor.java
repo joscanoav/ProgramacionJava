@@ -35,12 +35,13 @@ public class LineaMayor {
 					if (line.length() > largest.length()) {
 						largest = line;
 					} else {
-						if (smallest == null || line.length() < smallest.length()) {
+			          if (line.length() < smallest.length());
 						smallest = line;
 						}
 					}
 						
 				}
+		}
 				
 				br.close();
 				System.out.println("La linea con mas caracteres es  " + largest);
@@ -54,8 +55,10 @@ public class LineaMayor {
 			}
 		} else {
 			System.out.println("ERROR: tienen que ser un archivo comun.");
-		}
+		
 
 	}
 
 }
+
+

@@ -7,7 +7,7 @@ public class LeeFichero {
 
 	public static void main(String[] args) {
 
-		try (FileReader fr = new FileReader("D:\\archivo.txt")){
+		try (FileReader fr = new FileReader("C:\\prueba.txt")){
 			BufferedReader br = new BufferedReader(fr);
 			// lectura fichero
 			String linea;
