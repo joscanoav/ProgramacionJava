@@ -9,33 +9,49 @@ package ficherosClase;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LetrasParentesis {
 
 	public static void main(String[] args) {
 		String path = "resultado.txt";
+		Scanner sc = new Scanner(System.in);
 		String line;
-		ArrayList<String> palabras = new ArrayList<>();
+		
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(path));
+			PrintWriter pw = new PrintWriter(new FileWriter(path));
 			
-			while ((line = br.readLine()) != null) {
-				if(!palabras.contains(line)) {
-					palabras.add(line);
-				}
-			}
+			do {
+				System.out.print("Introduce una cadena: ");
+				line = sc.nextLine();
+				// Escribir la palabra con los "()"
+				pw.println(ponerParentesis(line));
+				
+			} while(!line.isEmpty());
 			
-			br.close();
-			
-			System.out.println("Palabras sin repetir: " + palabras);
-			
-			
+			sc.close();
+			pw.close();
+		
 		} catch (IOException e) {
-			System.err.println("ERROR: no se pudo leer el archivo");
-
+			System.err.println("ERROR: no se pudo escribir.");
 		}
+		
+	}
+	
+	private static String ponerParentesis(String line) {
+		String newLine = "";
+		
+		for (int i = 0; i < line.length(); i++) {
+				newLine += "(" + line.charAt(i) + ")";
+			
+		}
+		
+		return newLine;
+		
 	}
 
 }
