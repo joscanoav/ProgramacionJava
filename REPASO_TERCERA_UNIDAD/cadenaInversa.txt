@@ -1,0 +1,3 @@
+man
+carro
+sapo
