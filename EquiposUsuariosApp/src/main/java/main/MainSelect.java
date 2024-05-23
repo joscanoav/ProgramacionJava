@@ -1,48 +1,67 @@
 package main;
 
-import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
-import conexion.Conexion;
 
-import queries.Queries;
+import entidades.Equipo;
+import entidades.Usuario;
+import queries.QueriesEquipo;
+import queries.QueriesUsuarios;
 
 public class MainSelect {
 
     public static void main(String[] args) {
-            try (Connection conexion = ConexionBD.conectar()) {
-                Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-                // Muestra los equipos y el número de usuarios por equipo
-                QueriesEquipo.mostrarEquiposYNumeroUsuarios(conexion);
-
-                // Muestra los apellidos de los líderes de equipo
-                QueriesEquipo.mostrarLideresPorApellido(conexion);
-
-                // Muestra los usuarios ordenados por categoría de mayor a menor
-                QueriesUsuarios.mostrarUsuariosPorCategoria(conexion);
-
-                // Inserta un nuevo equipo
-                System.out.print("Ingrese el nombre del nuevo equipo: ");
-                String nombreEquipo = scanner.nextLine();
-                Equipo.insertarNuevoEquipo(conexion, nombreEquipo);
-
-                // Inserta un nuevo usuario
-                System.out.print("Ingrese el nombre del nuevo usuario: ");
-                String nombreUsuario = scanner.nextLine();
-                System.out.print("Ingrese el id del equipo del nuevo usuario: ");
-                int idEquipoUsuario = scanner.nextInt();
-                System.out.print("Ingrese la categoría del nuevo usuario: ");
-                int categoriaUsuario = scanner.nextInt();
-                scanner.nextLine(); // Consumir la nueva línea pendiente
-                Usuario.insertarNuevoUsuario(conexion, nombreUsuario, idEquipoUsuario, categoriaUsuario);
-
-                // Elimina usuarios por categoría y ajusta las categorías de los usuarios restantes
-                System.out.print("Ingrese la categoría de los usuarios que desea eliminar: ");
-                int categoriaEliminar = scanner.nextInt();
-                QueriesUsuarios.eliminarUsuariosPorCategoria(conexion, categoriaEliminar);
-            } catch (Exception e) {
-                e.printStackTrace();
+        try {
+            // Mostrar equipos y número de usuarios
+            List<Equipo> equipos = QueriesEquipo.obtenerEquipos();
+            for (Equipo equipo : equipos) {
+                System.out.println("Equipo: " + equipo.getNombre());
+                // Contar usuarios por equipo
+                long count = QueriesUsuarios.obtenerUsuariosOrdenadosPorCategoria().stream()
+                        .filter(usuario -> usuario.getIdEquipo() == equipo.getId())
+                        .count();
+                System.out.println("Número de usuarios: " + count);
             }
+
+            // Mostrar líderes ordenados por apellido
+            System.out.println("Líderes de equipo (apellidos ordenados alfabéticamente):");
+            List<String> lideres = QueriesUsuarios.obtenerLideresAlfabeticamente();
+            for (String apellido : lideres) {
+                System.out.println(apellido);
+            }
+
+            // Mostrar todos los usuarios ordenados por categoría
+            System.out.println("Usuarios ordenados por categoría (de mayor a menor):");
+            List<Usuario> usuarios = QueriesUsuarios.obtenerUsuariosOrdenadosPorCategoria();
+            for (Usuario usuario : usuarios) {
+                System.out.println(usuario);
+            }
+
+            // Insertar un nuevo equipo
+            System.out.print("Introduce el nombre del nuevo equipo: ");
+            String nuevoEquipo = scanner.nextLine();
+            QueriesEquipo.insertarEquipo(nuevoEquipo);
+
+            // Insertar un nuevo usuario
+            System.out.print("Introduce el nombre del nuevo usuario: ");
+            String nombreUsuario = scanner.nextLine();
+            System.out.print("Introduce el ID del equipo del nuevo usuario: ");
+            int idEquipo = scanner.nextInt();
+            System.out.print("Introduce la categoría del nuevo usuario: ");
+            int categoriaUsuario = scanner.nextInt();
+            scanner.nextLine(); // Consumir el salto de línea
+            QueriesUsuarios.insertarUsuario(nombreUsuario, idEquipo, categoriaUsuario);
+
+            // Eliminar usuarios por categoría y actualizar categorías
+            System.out.print("Introduce la categoría a eliminar: ");
+            int categoriaEliminar = scanner.nextInt();
+            QueriesUsuarios.eliminarUsuariosPorCategoria(categoriaEliminar);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
+}
