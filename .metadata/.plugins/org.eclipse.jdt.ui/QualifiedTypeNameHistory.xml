@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="Objetos.Persona"/>
-    <fullyQualifiedTypeName name="Principal.MainRobotGalletas"/>
-    <fullyQualifiedTypeName name="Objetos.Punto"/>
     <fullyQualifiedTypeName name="Objetos.Hospital"/>
     <fullyQualifiedTypeName name="Objetos.Fecha"/>
     <fullyQualifiedTypeName name="Actividad3.Celula"/>
@@ -19,7 +15,6 @@
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Properties"/>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="com.mysql.cj.jdbc.PreparedStatementWrapper"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="entidades.Actor"/>
@@ -32,31 +27,37 @@
     <fullyQualifiedTypeName name="java.lang.Package"/>
     <fullyQualifiedTypeName name="queries.ClienteQueries"/>
     <fullyQualifiedTypeName name="queries.AdministradorQueries"/>
-    <fullyQualifiedTypeName name="conexion.Conexion"/>
     <fullyQualifiedTypeName name="entidades.Cliente"/>
     <fullyQualifiedTypeName name="entidades.Administrador"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="joscanoav.model.User"/>
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.nio.file.attribute.AclEntry"/>
-    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
-    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-    <fullyQualifiedTypeName name="java.io.FileWriter"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
-    <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="queries.Queries"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="conexion.Conexion"/>
+    <fullyQualifiedTypeName name="entidades.Equipo"/>
+    <fullyQualifiedTypeName name="queries.QueriesEquipo"/>
+    <fullyQualifiedTypeName name="queries.QueriesUsuarios"/>
+    <fullyQualifiedTypeName name="entidades.Usuario"/>
 </qualifiedTypeNameHistroy>
