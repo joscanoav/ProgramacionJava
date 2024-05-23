@@ -1,4 +1,4 @@
-wpackage resolucionExamenes;
+package resolucionExamenes;
 
 public class MatrizMuestraXVocal {
     public static void main(String[] args) {

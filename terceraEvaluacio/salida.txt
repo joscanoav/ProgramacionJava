@@ -1,0 +1,4 @@
+ mayús 3  minús 2
+ mayús 2  minús 3
+ mayús 4  minús 1
+ mayús 1  minús 4
